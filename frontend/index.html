@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BeautyGraph adalah aplikasi pencarian produk skincare berbasis Semantic Web, RDF, Ontology, SPARQL, dan Knowledge Graph." />
+  <meta
+    name="description"
+    content="BeautyGraph adalah aplikasi pencarian produk skincare berbasis Semantic Web, RDF, Ontology, SPARQL, dan Knowledge Graph."
+  />
   <title>BeautyGraph | Semantic Skincare Finder</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
@@ -40,7 +48,9 @@
           <p class="eyebrow">RDF • Ontology • SPARQL • Knowledge Graph</p>
           <h1>Semantic Skincare Finder untuk relasi produk, ingredient, dan skin concern.</h1>
           <p class="hero-description">
-            BeautyGraph merepresentasikan produk skincare sebagai knowledge graph, sehingga pencarian tidak hanya berdasarkan keyword, tetapi juga berdasarkan hubungan semantik antar produk, brand, kategori, kandungan, tipe kulit, concern, benefit, dan price range.
+            BeautyGraph merepresentasikan produk skincare sebagai knowledge graph, sehingga pencarian tidak hanya
+            berdasarkan keyword, tetapi juga berdasarkan hubungan semantik antar produk, brand, kategori, kandungan,
+            tipe kulit, concern, benefit, dan price range.
           </p>
 
           <div class="hero-actions">
@@ -60,18 +70,24 @@
             <span class="soft-badge">Semantic Web</span>
             <span class="sparkle">✦</span>
           </div>
+
           <h2>Beauty Knowledge Graph</h2>
-          <p>Produk skincare dihubungkan ke entitas semantik seperti Ingredient, SkinType, SkinConcern, Benefit, Brand, Category, dan PriceRange.</p>
+          <p>
+            Produk skincare dihubungkan ke entitas semantik seperti Ingredient, SkinType, SkinConcern, Benefit,
+            Brand, Category, dan PriceRange.
+          </p>
 
           <div class="stats-grid">
             <article class="stat-card">
               <span id="statProducts">-</span>
               <p>Produk RDF</p>
             </article>
+
             <article class="stat-card">
               <span id="statTriples">-</span>
               <p>Total Triples</p>
             </article>
+
             <article class="stat-card">
               <span id="statFilters">-</span>
               <p>Filter Options</p>
@@ -87,11 +103,13 @@
         <strong>RDF Dataset</strong>
         <p>Produk disimpan sebagai triple subject-predicate-object.</p>
       </article>
+
       <article>
         <span>02</span>
         <strong>Ontology Model</strong>
         <p>Class dan property mendefinisikan makna relasi produk.</p>
       </article>
+
       <article>
         <span>03</span>
         <strong>SPARQL Query</strong>
@@ -101,9 +119,15 @@
 
     <section class="workspace" aria-label="BeautyGraph workspace">
       <div class="tabs" role="tablist" aria-label="BeautyGraph sections">
-        <button class="tab-btn active" type="button" role="tab" aria-selected="true" data-tab="explorer">Semantic Search</button>
-        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="sparql">SPARQL Lab</button>
-        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="ontology">Ontology & RDF</button>
+        <button class="tab-btn active" type="button" role="tab" aria-selected="true" data-tab="explorer">
+          Semantic Search
+        </button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="sparql">
+          SPARQL Lab
+        </button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="ontology">
+          Ontology & RDF
+        </button>
       </div>
 
       <section id="explorer" class="tab-panel active" role="tabpanel">
@@ -118,7 +142,12 @@
             <label for="keywordInput">Keyword produk</label>
             <div class="input-shell">
               <span>⌕</span>
-              <input id="keywordInput" type="search" placeholder="Contoh: serum, sunscreen, cleanser" autocomplete="off" />
+              <input
+                id="keywordInput"
+                type="search"
+                placeholder="Contoh: serum, sunscreen, cleanser"
+                autocomplete="off"
+              />
             </div>
 
             <div class="quick-presets" aria-label="Quick filter presets">
@@ -131,31 +160,51 @@
             <div class="filter-grid">
               <label>
                 Skin Type
-                <select id="skinTypeSelect"><option value="">Semua Skin Type</option></select>
+                <select id="skinTypeSelect">
+                  <option value="">Semua Skin Type</option>
+                </select>
               </label>
+
               <label>
                 Concern
-                <select id="concernSelect"><option value="">Semua Concern</option></select>
+                <select id="concernSelect">
+                  <option value="">Semua Concern</option>
+                </select>
               </label>
+
               <label>
                 Ingredient
-                <select id="ingredientSelect"><option value="">Semua Ingredient</option></select>
+                <select id="ingredientSelect">
+                  <option value="">Semua Ingredient</option>
+                </select>
               </label>
+
               <label>
                 Brand
-                <select id="brandSelect"><option value="">Semua Brand</option></select>
+                <select id="brandSelect">
+                  <option value="">Semua Brand</option>
+                </select>
               </label>
+
               <label>
                 Category
-                <select id="categorySelect"><option value="">Semua Category</option></select>
+                <select id="categorySelect">
+                  <option value="">Semua Category</option>
+                </select>
               </label>
+
               <label>
                 Benefit
-                <select id="benefitSelect"><option value="">Semua Benefit</option></select>
+                <select id="benefitSelect">
+                  <option value="">Semua Benefit</option>
+                </select>
               </label>
+
               <label>
                 Price Range
-                <select id="priceRangeSelect"><option value="">Semua Price Range</option></select>
+                <select id="priceRangeSelect">
+                  <option value="">Semua Price Range</option>
+                </select>
               </label>
             </div>
 
@@ -165,7 +214,8 @@
             </div>
 
             <p class="helper-text">
-              Filter ini memanggil endpoint <code>GET /products</code> yang dibangun dari query SPARQL terhadap RDF dataset.
+              Filter ini memanggil endpoint <code>GET /products</code> yang dibangun dari query SPARQL terhadap RDF
+              dataset.
             </p>
           </aside>
 
@@ -229,6 +279,7 @@
               </div>
               <span id="sparqlCount" class="result-count">0 rows</span>
             </div>
+
             <div id="sparqlError" class="state-card error hidden"></div>
             <div id="sparqlTableWrap" class="table-wrap"></div>
           </article>
@@ -242,20 +293,45 @@
               <p class="eyebrow">Ontology Model</p>
               <h2>Relasi Utama BeautyGraph</h2>
             </div>
+
             <div class="ontology-map" aria-label="BeautyGraph ontology diagram">
+              <svg class="ontology-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="ontologyLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#d84f82" stop-opacity="0.55" />
+                    <stop offset="100%" stop-color="#b33d6b" stop-opacity="0.35" />
+                  </linearGradient>
+                </defs>
+
+                <line x1="50" y1="50" x2="15" y2="22" />
+                <line x1="50" y1="50" x2="85" y2="22" />
+                <line x1="50" y1="50" x2="15" y2="55" />
+                <line x1="50" y1="50" x2="85" y2="55" />
+                <line x1="50" y1="50" x2="28" y2="82" />
+                <line x1="50" y1="50" x2="72" y2="82" />
+                <line x1="50" y1="50" x2="50" y2="89" />
+              </svg>
+
               <div class="node center">Product</div>
+
               <div class="edge edge-brand">belongsToBrand</div>
               <div class="node brand-node">Brand</div>
+
               <div class="edge edge-category">belongsToCategory</div>
               <div class="node category-node">Category</div>
+
               <div class="edge edge-ingredient">hasIngredient</div>
               <div class="node ingredient-node">Ingredient</div>
+
               <div class="edge edge-skin">suitableFor</div>
               <div class="node skin-node">SkinType</div>
+
               <div class="edge edge-concern">targetsConcern</div>
               <div class="node concern-node">SkinConcern</div>
+
               <div class="edge edge-benefit">hasBenefit</div>
               <div class="node benefit-node">Benefit</div>
+
               <div class="edge edge-price">hasPriceRange</div>
               <div class="node price-node">PriceRange</div>
             </div>
@@ -265,7 +341,9 @@
             <p class="eyebrow">Semantic Search</p>
             <h2>Kenapa bukan database biasa?</h2>
             <p>
-              BeautyGraph tidak hanya menyimpan produk sebagai teks, tetapi menghubungkan produk dengan entitas bermakna seperti ingredient, skin type, concern, benefit, brand, category, dan price range. Relasi ini membuat pencarian lebih explainable.
+              BeautyGraph tidak hanya menyimpan produk sebagai teks, tetapi menghubungkan produk dengan entitas bermakna
+              seperti ingredient, skin type, concern, benefit, brand, category, dan price range. Relasi ini membuat
+              pencarian lebih explainable.
             </p>
           </article>
 
