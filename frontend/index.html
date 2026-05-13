@@ -1,253 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BeautyGraph | Semantic Skincare Search</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <meta name="description" content="BeautyGraph adalah aplikasi pencarian produk skincare berbasis Semantic Web, RDF, Ontology, SPARQL, dan Knowledge Graph." />
+  <title>BeautyGraph | Semantic Skincare Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <header class="hero">
-      <nav class="topbar">
-        <div class="brand-mark">
-          <div class="brand-logo">BG</div>
-          <div>
-            <p class="eyebrow">Semantic Web Project</p>
-            <h1>BeautyGraph</h1>
-          </div>
-        </div>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="ambient ambient-three"></div>
 
-        <div class="server-status" id="serverStatus">
-          <span class="status-dot status-pending"></span>
-          <span>Checking backend...</span>
+  <main class="app-shell">
+    <header class="hero-section">
+      <nav class="topbar" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="BeautyGraph home">
+          <span class="brand-logo">BG</span>
+          <span>
+            <strong>BeautyGraph</strong>
+            <small>Semantic Web Project</small>
+          </span>
+        </a>
+
+        <div class="topbar-actions">
+          <div id="serverStatus" class="server-status" aria-live="polite">
+            <span class="status-dot status-pending"></span>
+            Checking backend...
+          </div>
+          <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme">☾</button>
         </div>
       </nav>
 
-      <section class="hero-content">
+      <section id="top" class="hero-grid">
         <div class="hero-copy">
-          <p class="badge">RDF • Ontology • SPARQL • Knowledge Graph</p>
-          <h2>Sistem Pencarian Semantik Produk Skincare</h2>
-          <p>
-            Cari produk berdasarkan relasi semantik seperti jenis kulit, concern,
-            ingredient, brand, kategori, benefit, dan price range.
+          <p class="eyebrow">RDF • Ontology • SPARQL • Knowledge Graph</p>
+          <h1>Semantic Skincare Finder untuk relasi produk, ingredient, dan skin concern.</h1>
+          <p class="hero-description">
+            BeautyGraph merepresentasikan produk skincare sebagai knowledge graph, sehingga pencarian tidak hanya berdasarkan keyword, tetapi juga berdasarkan hubungan semantik antar produk, brand, kategori, kandungan, tipe kulit, concern, benefit, dan price range.
           </p>
+
+          <div class="hero-actions">
+            <button class="primary-btn" type="button" data-jump="explorer">Mulai Cari Produk</button>
+            <button class="secondary-btn" type="button" data-jump="sparql">Coba SPARQL Lab</button>
+          </div>
+
+          <div class="trust-row" aria-label="Project components">
+            <span>Ontology-driven</span>
+            <span>RDF triples</span>
+            <span>SPARQL endpoint</span>
+          </div>
         </div>
 
-        <div class="stats-grid">
-          <div class="stat-card">
-            <span id="statProducts">-</span>
-            <p>Produk RDF</p>
+        <aside class="hero-card" aria-label="Project statistics">
+          <div class="hero-card-header">
+            <span class="soft-badge">Semantic Web</span>
+            <span class="sparkle">✦</span>
           </div>
-          <div class="stat-card">
-            <span id="statTriples">-</span>
-            <p>Total Triples</p>
+          <h2>Beauty Knowledge Graph</h2>
+          <p>Produk skincare dihubungkan ke entitas semantik seperti Ingredient, SkinType, SkinConcern, Benefit, Brand, Category, dan PriceRange.</p>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span id="statProducts">-</span>
+              <p>Produk RDF</p>
+            </article>
+            <article class="stat-card">
+              <span id="statTriples">-</span>
+              <p>Total Triples</p>
+            </article>
+            <article class="stat-card">
+              <span id="statFilters">-</span>
+              <p>Filter Options</p>
+            </article>
           </div>
-          <div class="stat-card">
-            <span id="statFilters">-</span>
-            <p>Filter Options</p>
-          </div>
-        </div>
+        </aside>
       </section>
     </header>
 
-    <main>
-      <section class="tabs" aria-label="Main navigation">
-        <button class="tab-btn active" data-tab="searchTab">Semantic Search</button>
-        <button class="tab-btn" data-tab="sparqlTab">SPARQL Demo</button>
-        <button class="tab-btn" data-tab="aboutTab">About RDF</button>
-      </section>
+    <section class="semantic-strip" aria-label="Semantic Web flow">
+      <article>
+        <span>01</span>
+        <strong>RDF Dataset</strong>
+        <p>Produk disimpan sebagai triple subject-predicate-object.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <strong>Ontology Model</strong>
+        <p>Class dan property mendefinisikan makna relasi produk.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <strong>SPARQL Query</strong>
+        <p>Website mengambil hasil pencarian dari endpoint semantik.</p>
+      </article>
+    </section>
 
-      <section id="searchTab" class="tab-panel active">
-        <div class="panel-grid">
+    <section class="workspace" aria-label="BeautyGraph workspace">
+      <div class="tabs" role="tablist" aria-label="BeautyGraph sections">
+        <button class="tab-btn active" type="button" role="tab" aria-selected="true" data-tab="explorer">Semantic Search</button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="sparql">SPARQL Lab</button>
+        <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="ontology">Ontology & RDF</button>
+      </div>
+
+      <section id="explorer" class="tab-panel active" role="tabpanel">
+        <div class="explorer-layout">
           <aside class="filter-card">
-            <div class="card-header">
+            <div class="section-heading compact">
               <p class="eyebrow">Search Controls</p>
-              <h3>Filter Produk</h3>
+              <h2>Filter Produk</h2>
+              <p>Pilih kombinasi relasi semantik untuk menemukan produk yang relevan.</p>
             </div>
 
-            <label>
-              Keyword
-              <input id="keywordInput" type="text" placeholder="Cari nama produk..." />
-            </label>
+            <label for="keywordInput">Keyword produk</label>
+            <div class="input-shell">
+              <span>⌕</span>
+              <input id="keywordInput" type="search" placeholder="Contoh: serum, sunscreen, cleanser" autocomplete="off" />
+            </div>
 
-            <label>
-              Skin Type
-              <select id="skinTypeSelect">
-                <option value="">Semua Skin Type</option>
-              </select>
-            </label>
+            <div class="quick-presets" aria-label="Quick filter presets">
+              <button type="button" class="chip-btn" data-preset='{"skin_type":"OilySkin"}'>Oily Skin</button>
+              <button type="button" class="chip-btn" data-preset='{"concern":"Acne"}'>Acne</button>
+              <button type="button" class="chip-btn" data-preset='{"ingredient":"Niacinamide"}'>Niacinamide</button>
+              <button type="button" class="chip-btn" data-preset='{"category":"Serum"}'>Serum</button>
+            </div>
 
-            <label>
-              Concern
-              <select id="concernSelect">
-                <option value="">Semua Concern</option>
-              </select>
-            </label>
-
-            <label>
-              Ingredient
-              <select id="ingredientSelect">
-                <option value="">Semua Ingredient</option>
-              </select>
-            </label>
-
-            <label>
-              Brand
-              <select id="brandSelect">
-                <option value="">Semua Brand</option>
-              </select>
-            </label>
-
-            <label>
-              Category
-              <select id="categorySelect">
-                <option value="">Semua Category</option>
-              </select>
-            </label>
-
-            <label>
-              Benefit
-              <select id="benefitSelect">
-                <option value="">Semua Benefit</option>
-              </select>
-            </label>
-
-            <label>
-              Price Range
-              <select id="priceRangeSelect">
-                <option value="">Semua Price Range</option>
-              </select>
-            </label>
+            <div class="filter-grid">
+              <label>
+                Skin Type
+                <select id="skinTypeSelect"><option value="">Semua Skin Type</option></select>
+              </label>
+              <label>
+                Concern
+                <select id="concernSelect"><option value="">Semua Concern</option></select>
+              </label>
+              <label>
+                Ingredient
+                <select id="ingredientSelect"><option value="">Semua Ingredient</option></select>
+              </label>
+              <label>
+                Brand
+                <select id="brandSelect"><option value="">Semua Brand</option></select>
+              </label>
+              <label>
+                Category
+                <select id="categorySelect"><option value="">Semua Category</option></select>
+              </label>
+              <label>
+                Benefit
+                <select id="benefitSelect"><option value="">Semua Benefit</option></select>
+              </label>
+              <label>
+                Price Range
+                <select id="priceRangeSelect"><option value="">Semua Price Range</option></select>
+              </label>
+            </div>
 
             <div class="button-row">
-              <button id="searchBtn" class="primary-btn">Cari Produk</button>
-              <button id="resetBtn" class="secondary-btn">Reset</button>
+              <button id="searchBtn" class="primary-btn full" type="button">Cari Produk</button>
+              <button id="resetBtn" class="secondary-btn full" type="button">Reset Filter</button>
             </div>
 
             <p class="helper-text">
-              Filter ini akan memanggil endpoint <code>/products</code> yang dibangun
-              dari query SPARQL ke RDF dataset.
+              Filter ini memanggil endpoint <code>GET /products</code> yang dibangun dari query SPARQL terhadap RDF dataset.
             </p>
           </aside>
 
-          <section class="results-area">
+          <div class="results-area">
             <div class="results-toolbar">
-              <div>
+              <div class="section-heading compact">
                 <p class="eyebrow">Search Result</p>
-                <h3 id="resultTitle">Produk ditemukan</h3>
+                <h2 id="resultTitle">Produk ditemukan</h2>
               </div>
-              <div class="result-count" id="resultCount">0 hasil</div>
+              <span id="resultCount" class="result-count">0 hasil</span>
             </div>
 
-            <div id="activeFilters" class="active-filters"></div>
+            <div id="activeFilters" class="active-filters" aria-live="polite"></div>
 
-            <div id="loadingState" class="state-card hidden">
-              <div class="loader"></div>
+            <div id="semanticSummary" class="semantic-summary">
+              <strong>Semantic hint:</strong>
+              <span>Gunakan lebih dari satu filter untuk memperlihatkan kekuatan pencarian berbasis relasi.</span>
+            </div>
+
+            <div id="loadingState" class="state-card">
+              <span class="loader"></span>
               <p>Mengambil data dari SPARQL endpoint...</p>
             </div>
 
             <div id="errorState" class="state-card error hidden"></div>
-
             <div id="productGrid" class="product-grid"></div>
-          </section>
+          </div>
         </div>
       </section>
 
-      <section id="sparqlTab" class="tab-panel">
+      <section id="sparql" class="tab-panel" role="tabpanel">
         <div class="sparql-layout">
-          <div class="sparql-editor-card">
-            <div class="card-header">
+          <article class="sparql-editor-card">
+            <div class="section-heading compact">
               <p class="eyebrow">Manual Query</p>
-              <h3>SPARQL Demo</h3>
-              <p>
-                Jalankan query SPARQL langsung ke endpoint <code>POST /sparql</code>.
-              </p>
+              <h2>SPARQL Lab</h2>
+              <p>Jalankan query langsung ke endpoint <code>POST /sparql</code>.</p>
             </div>
 
-            <div class="example-row">
-              <button class="chip-btn" data-example="allProducts">All Products</button>
-              <button class="chip-btn" data-example="niacinamide">Ingredient: Niacinamide</button>
-              <button class="chip-btn" data-example="oilyAcne">Oily Skin + Acne</button>
-              <button class="chip-btn" data-example="similar">Similar Product P001</button>
+            <div class="example-row" aria-label="SPARQL examples">
+              <button class="chip-btn" type="button" data-example="allProducts">All Products</button>
+              <button class="chip-btn" type="button" data-example="niacinamide">Ingredient: Niacinamide</button>
+              <button class="chip-btn" type="button" data-example="oilyAcne">Oily + Acne</button>
+              <button class="chip-btn" type="button" data-example="similar">Similar Product P001</button>
             </div>
 
-            <textarea id="sparqlInput" spellcheck="false"></textarea>
+            <textarea id="sparqlInput" spellcheck="false" aria-label="SPARQL query editor"></textarea>
 
             <div class="button-row">
-              <button id="runSparqlBtn" class="primary-btn">Run SPARQL</button>
-              <button id="clearSparqlBtn" class="secondary-btn">Clear Result</button>
+              <button id="runSparqlBtn" class="primary-btn" type="button">Run SPARQL</button>
+              <button id="copySparqlBtn" class="secondary-btn" type="button">Copy Query</button>
+              <button id="clearSparqlBtn" class="secondary-btn" type="button">Clear Result</button>
             </div>
-          </div>
+          </article>
 
-          <div class="sparql-result-card">
+          <article class="sparql-result-card">
             <div class="results-toolbar">
-              <div>
+              <div class="section-heading compact">
                 <p class="eyebrow">SPARQL Output</p>
-                <h3>Result Table</h3>
+                <h2>Result Table</h2>
               </div>
-              <div class="result-count" id="sparqlCount">0 rows</div>
+              <span id="sparqlCount" class="result-count">0 rows</span>
             </div>
-
             <div id="sparqlError" class="state-card error hidden"></div>
             <div id="sparqlTableWrap" class="table-wrap"></div>
-          </div>
+          </article>
         </div>
       </section>
 
-      <section id="aboutTab" class="tab-panel">
+      <section id="ontology" class="tab-panel" role="tabpanel">
         <div class="about-grid">
-          <article class="about-card">
-            <p class="eyebrow">Ontology Model</p>
-            <h3>Relasi Utama BeautyGraph</h3>
-            <pre class="ontology-diagram">Brand  ← belongsToBrand — Product — belongsToCategory → Category
-                              |
-                              ├── hasIngredient → Ingredient
-                              ├── suitableFor → SkinType
-                              ├── targetsConcern → SkinConcern
-                              ├── hasBenefit → Benefit
-                              └── hasPriceRange → PriceRange</pre>
+          <article class="about-card wide">
+            <div class="section-heading compact">
+              <p class="eyebrow">Ontology Model</p>
+              <h2>Relasi Utama BeautyGraph</h2>
+            </div>
+            <div class="ontology-map" aria-label="BeautyGraph ontology diagram">
+              <div class="node center">Product</div>
+              <div class="edge edge-brand">belongsToBrand</div>
+              <div class="node brand-node">Brand</div>
+              <div class="edge edge-category">belongsToCategory</div>
+              <div class="node category-node">Category</div>
+              <div class="edge edge-ingredient">hasIngredient</div>
+              <div class="node ingredient-node">Ingredient</div>
+              <div class="edge edge-skin">suitableFor</div>
+              <div class="node skin-node">SkinType</div>
+              <div class="edge edge-concern">targetsConcern</div>
+              <div class="node concern-node">SkinConcern</div>
+              <div class="edge edge-benefit">hasBenefit</div>
+              <div class="node benefit-node">Benefit</div>
+              <div class="edge edge-price">hasPriceRange</div>
+              <div class="node price-node">PriceRange</div>
+            </div>
           </article>
 
           <article class="about-card">
             <p class="eyebrow">Semantic Search</p>
-            <h3>Kenapa bukan database biasa?</h3>
+            <h2>Kenapa bukan database biasa?</h2>
             <p>
-              BeautyGraph merepresentasikan data produk sebagai RDF triples.
-              Setiap produk tidak hanya menyimpan teks, tetapi juga memiliki relasi
-              eksplisit ke brand, kategori, ingredient, skin type, concern, benefit,
-              dan price range.
-            </p>
-            <p>
-              Dengan SPARQL, sistem dapat mencari produk berdasarkan hubungan antar
-              entitas, misalnya produk yang cocok untuk <b>Oily Skin</b>, menargetkan
-              <b>Acne</b>, dan memiliki ingredient <b>Niacinamide</b>.
+              BeautyGraph tidak hanya menyimpan produk sebagai teks, tetapi menghubungkan produk dengan entitas bermakna seperti ingredient, skin type, concern, benefit, brand, category, dan price range. Relasi ini membuat pencarian lebih explainable.
             </p>
           </article>
 
           <article class="about-card">
             <p class="eyebrow">Project Status</p>
-            <h3>Komponen Semantic Web</h3>
+            <h2>Komponen UAS</h2>
             <ul class="check-list">
-              <li>RDF dataset: <b>beautygraph.ttl</b></li>
-              <li>Ontology: <b>beautygraph_ontology_clean.ttl</b></li>
-              <li>SPARQL endpoint: <b>Flask /sparql</b></li>
-              <li>Website pencarian: <b>Frontend vanilla JS</b></li>
-              <li>Optional KG view: <b>Product detail graph</b></li>
+              <li>RDF dataset: <code>beautygraph.ttl</code></li>
+              <li>Ontology: <code>beautygraph_ontology_clean.ttl</code></li>
+              <li>SPARQL endpoint: Flask <code>/sparql</code></li>
+              <li>Website pencarian: HTML, CSS, vanilla JavaScript</li>
+              <li>Knowledge Graph view: product detail graph</li>
             </ul>
           </article>
         </div>
       </section>
-    </main>
+    </section>
+  </main>
+
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <div id="detailModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <section class="modal">
+      <button id="modalCloseBtn" class="modal-close" type="button" aria-label="Close modal">×</button>
+      <div id="modalContent" class="detail-content"></div>
+    </section>
   </div>
 
-  <div class="modal-backdrop hidden" id="detailModal">
-    <div class="modal">
-      <button class="modal-close" id="modalCloseBtn" aria-label="Close detail">×</button>
-      <div id="modalContent"></div>
-    </div>
-  </div>
-
-  <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
