@@ -1,0 +1,26 @@
+# Q7 - Similar products by shared ingredients
+# Use case: mencari produk yang mirip dengan beauty:P001 berdasarkan ingredient yang sama.
+# Query ini cocok dijadikan fitur rekomendasi sederhana berbasis Knowledge Graph.
+
+PREFIX beauty: <http://beautygraph.org/ontology#>
+
+SELECT ?candidate ?candidateName ?brandName
+       (COUNT(DISTINCT ?sharedIngredient) AS ?sharedIngredientCount)
+       (GROUP_CONCAT(DISTINCT ?sharedIngredientName; separator=", ") AS ?sharedIngredients)
+WHERE {
+  beauty:P001 beauty:hasIngredient ?sharedIngredient .
+
+  ?candidate a beauty:Product ;
+             beauty:productName ?candidateName ;
+             beauty:hasIngredient ?sharedIngredient ;
+             beauty:belongsToBrand ?brand .
+
+  FILTER(?candidate != beauty:P001)
+
+  BIND(REPLACE(STRAFTER(STR(?brand), "#"), "([a-z])([A-Z])", "$1 $2") AS ?brandName)
+  BIND(REPLACE(STRAFTER(STR(?sharedIngredient), "#"), "([a-z])([A-Z])", "$1 $2") AS ?sharedIngredientName)
+}
+GROUP BY ?candidate ?candidateName ?brandName
+HAVING (COUNT(DISTINCT ?sharedIngredient) >= 2)
+ORDER BY DESC(?sharedIngredientCount) ?brandName ?candidateName
+LIMIT 10

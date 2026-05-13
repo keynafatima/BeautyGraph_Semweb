@@ -1,0 +1,25 @@
+# Q4 - Search products by brand
+# Use case: menampilkan produk dari brand Wardah beserta skin type dan concern-nya.
+# Ganti beauty:Wardah menjadi beauty:Somethinc, beauty:Avoskin, dll jika diperlukan.
+
+PREFIX beauty: <http://beautygraph.org/ontology#>
+
+SELECT ?product ?productName ?categoryName
+       (GROUP_CONCAT(DISTINCT ?skinTypeName; separator=", ") AS ?suitableFor)
+       (GROUP_CONCAT(DISTINCT ?concernName; separator=", ") AS ?targetConcerns)
+       ?sourceURL
+WHERE {
+  ?product a beauty:Product ;
+           beauty:productName ?productName ;
+           beauty:belongsToBrand beauty:Wardah ;
+           beauty:belongsToCategory ?category ;
+           beauty:suitableFor ?skinType ;
+           beauty:targetsConcern ?concern ;
+           beauty:sourceURL ?sourceURL .
+
+  BIND(STRAFTER(STR(?category), "#") AS ?categoryName)
+  BIND(REPLACE(STRAFTER(STR(?skinType), "#"), "([a-z])([A-Z])", "$1 $2") AS ?skinTypeName)
+  BIND(REPLACE(STRAFTER(STR(?concern), "#"), "([a-z])([A-Z])", "$1 $2") AS ?concernName)
+}
+GROUP BY ?product ?productName ?categoryName ?sourceURL
+ORDER BY ?categoryName ?productName

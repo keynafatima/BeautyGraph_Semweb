@@ -1,0 +1,25 @@
+# Q5 - Search products by skin type + concern
+# Use case: mencari produk yang cocok untuk OilySkin dan menargetkan Acne.
+# Query ini menunjukkan JOIN semantic antara Product, SkinType, SkinConcern, Ingredient, Brand, dan Category.
+
+PREFIX beauty: <http://beautygraph.org/ontology#>
+
+SELECT ?product ?productName ?brandName ?categoryName
+       (GROUP_CONCAT(DISTINCT ?ingredientName; separator=", ") AS ?keyIngredients)
+       ?sourceURL
+WHERE {
+  ?product a beauty:Product ;
+           beauty:productName ?productName ;
+           beauty:suitableFor beauty:OilySkin ;
+           beauty:targetsConcern beauty:Acne ;
+           beauty:hasIngredient ?ingredient ;
+           beauty:belongsToBrand ?brand ;
+           beauty:belongsToCategory ?category ;
+           beauty:sourceURL ?sourceURL .
+
+  BIND(REPLACE(STRAFTER(STR(?brand), "#"), "([a-z])([A-Z])", "$1 $2") AS ?brandName)
+  BIND(STRAFTER(STR(?category), "#") AS ?categoryName)
+  BIND(REPLACE(STRAFTER(STR(?ingredient), "#"), "([a-z])([A-Z])", "$1 $2") AS ?ingredientName)
+}
+GROUP BY ?product ?productName ?brandName ?categoryName ?sourceURL
+ORDER BY ?brandName ?productName

@@ -1,0 +1,22 @@
+# Q6 - Search products by price range + benefit
+# Use case: mencari produk Mid yang memiliki benefit Brightening.
+# Ganti beauty:Mid menjadi beauty:Budget atau beauty:Premium jika diperlukan.
+
+PREFIX beauty: <http://beautygraph.org/ontology#>
+
+SELECT DISTINCT ?product ?productName ?brandName ?categoryName ?priceRangeName ?sourceURL
+WHERE {
+  ?product a beauty:Product ;
+           beauty:productName ?productName ;
+           beauty:hasBenefit beauty:Brightening ;
+           beauty:hasPriceRange beauty:Mid ;
+           beauty:belongsToBrand ?brand ;
+           beauty:belongsToCategory ?category ;
+           beauty:hasPriceRange ?priceRange ;
+           beauty:sourceURL ?sourceURL .
+
+  BIND(REPLACE(STRAFTER(STR(?brand), "#"), "([a-z])([A-Z])", "$1 $2") AS ?brandName)
+  BIND(STRAFTER(STR(?category), "#") AS ?categoryName)
+  BIND(STRAFTER(STR(?priceRange), "#") AS ?priceRangeName)
+}
+ORDER BY ?categoryName ?brandName ?productName

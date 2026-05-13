@@ -1,0 +1,21 @@
+# Q3 - Search products by ingredient
+# Use case: mencari produk yang mengandung Niacinamide.
+# Ganti beauty:Niacinamide menjadi beauty:HyaluronicAcid, beauty:CentellaAsiatica, dll jika diperlukan.
+
+PREFIX beauty: <http://beautygraph.org/ontology#>
+
+SELECT DISTINCT ?product ?productName ?brandName ?categoryName ?priceRangeName ?sourceURL
+WHERE {
+  ?product a beauty:Product ;
+           beauty:productName ?productName ;
+           beauty:hasIngredient beauty:Niacinamide ;
+           beauty:belongsToBrand ?brand ;
+           beauty:belongsToCategory ?category ;
+           beauty:hasPriceRange ?priceRange ;
+           beauty:sourceURL ?sourceURL .
+
+  BIND(REPLACE(STRAFTER(STR(?brand), "#"), "([a-z])([A-Z])", "$1 $2") AS ?brandName)
+  BIND(STRAFTER(STR(?category), "#") AS ?categoryName)
+  BIND(STRAFTER(STR(?priceRange), "#") AS ?priceRangeName)
+}
+ORDER BY ?categoryName ?brandName ?productName

@@ -1,0 +1,19 @@
+# Q2 - Search products by skin concern
+# Use case: mencari produk yang menargetkan concern AcneMarks.
+# Ganti beauty:AcneMarks menjadi beauty:Dullness, beauty:Hyperpigmentation, dll jika diperlukan.
+
+PREFIX beauty: <http://beautygraph.org/ontology#>
+
+SELECT DISTINCT ?product ?productName ?brandName ?categoryName ?sourceURL
+WHERE {
+  ?product a beauty:Product ;
+           beauty:productName ?productName ;
+           beauty:targetsConcern beauty:AcneMarks ;
+           beauty:belongsToBrand ?brand ;
+           beauty:belongsToCategory ?category ;
+           beauty:sourceURL ?sourceURL .
+
+  BIND(REPLACE(STRAFTER(STR(?brand), "#"), "([a-z])([A-Z])", "$1 $2") AS ?brandName)
+  BIND(STRAFTER(STR(?category), "#") AS ?categoryName)
+}
+ORDER BY ?brandName ?productName

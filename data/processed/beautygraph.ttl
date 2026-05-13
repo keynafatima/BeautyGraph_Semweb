@@ -1,0 +1,1344 @@
+@prefix beauty: <http://beautygraph.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+beauty: a owl:Ontology ;
+    rdfs:label "BeautyGraph Ontology" ;
+    rdfs:comment "Ontologi untuk sistem pencarian produk skincare berbasis Semantic Web." .
+
+beauty:P001 a beauty:Product ;
+    rdfs:label "Niacinamide Serum 10%"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:PoreCare ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Niacinamide Serum 10%"^^xsd:string ;
+    beauty:sourceName "SOCO Review"^^xsd:string ;
+    beauty:sourceURL "https://review.soco.id/product/face-serum/70514-niacinamide-moisture-beet-serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:OilySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:AcneMarks,
+        beauty:LargePores .
+
+beauty:P002 a beauty:Product ;
+    rdfs:label "Aloe Soothing Gel"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Moisturizer ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:Allantoin,
+        beauty:AloeVera,
+        beauty:CentellaAsiatica ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Aloe Soothing Gel"^^xsd:string ;
+    beauty:sourceName "Somethinc Official"^^xsd:string ;
+    beauty:sourceURL "https://somethinc.com/id/product/detail/calm-down-skinpair-r-cover-cream"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:DrySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Irritation,
+        beauty:Redness .
+
+beauty:P003 a beauty:Product ;
+    rdfs:label "Hyaluronic Acid Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:Allantoin,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:Panthenol ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Hyaluronic Acid Serum"^^xsd:string ;
+    beauty:sourceName "Somethinc Official"^^xsd:string ;
+    beauty:sourceURL "https://somethinc.com/id/product/detail/hyaluronic9-advanced-b5-serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:DrySkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration,
+        beauty:Dullness .
+
+beauty:P004 a beauty:Product ;
+    rdfs:label "Level 1-2-3 Retinol Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:AntiAging,
+        beauty:Brightening ;
+    beauty:hasIngredient beauty:Niacinamide,
+        beauty:Peptide,
+        beauty:Retinol,
+        beauty:Squalane ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Level 1-2-3 Retinol Serum"^^xsd:string ;
+    beauty:sourceName "Somethinc Official"^^xsd:string ;
+    beauty:sourceURL "https://somethinc.com/id/product/detail/level-1-encapsulated-retinol"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Aging,
+        beauty:Dullness,
+        beauty:FineLine .
+
+beauty:P005 a beauty:Product ;
+    rdfs:label "Sunscreen Matte Finish SPF50"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:MattifyingEffect,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Sunscreen Matte Finish SPF50"^^xsd:string ;
+    beauty:sourceName "Somethinc Official"^^xsd:string ;
+    beauty:sourceURL "https://somethinc.com/id/product/detail/holyshield-watery-sunscreen-gel-spf-50-pa"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:LargePores,
+        beauty:SunDamage .
+
+beauty:P006 a beauty:Product ;
+    rdfs:label "Acne Spot Gel"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:Niacinamide,
+        beauty:SalicylicAcid,
+        beauty:TeaTree ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Acne Spot Gel"^^xsd:string ;
+    beauty:sourceName "Somethinc Official"^^xsd:string ;
+    beauty:sourceURL "https://somethinc.com/id/product/detail/acne-shot-ac-spot-gel"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:Inflammation .
+
+beauty:P007 a beauty:Product ;
+    rdfs:label "Even Skin Tone Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:Niacinamide,
+        beauty:TranexamicAcid,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Even Skin Tone Serum"^^xsd:string ;
+    beauty:sourceName "Somethinc Official"^^xsd:string ;
+    beauty:sourceURL "https://somethinc.com/en/product/detail/gentle-bright-niacinamide-alpha-arbutin-serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dullness,
+        beauty:Hyperpigmentation .
+
+beauty:P008 a beauty:Product ;
+    rdfs:label "Moisturizing Gel Cream"^^xsd:string ;
+    beauty:belongsToBrand beauty:Somethinc ;
+    beauty:belongsToCategory beauty:Moisturizer ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:PoreCare ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:Ceramide,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Moisturizing Gel Cream"^^xsd:string ;
+    beauty:sourceName "Somethinc Official"^^xsd:string ;
+    beauty:sourceURL "https://somethinc.com/id/product/detail/ceramic-skin-saviour-moisturizer-gel-reformulated"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Dehydration,
+        beauty:LargePores .
+
+beauty:P009 a beauty:Product ;
+    rdfs:label "White Secret Brightening Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Wardah ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "White Secret Brightening Serum"^^xsd:string ;
+    beauty:sourceName "Female Daily Review"^^xsd:string ;
+    beauty:sourceURL "https://reviews.femaledaily.com/products/treatment/serum-essence/wardah/crystal-secret-dark-spot-brightening-serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dullness,
+        beauty:Hyperpigmentation,
+        beauty:UnevenSkinTone .
+
+beauty:P010 a beauty:Product ;
+    rdfs:label "Hydrating Toner"^^xsd:string ;
+    beauty:belongsToBrand beauty:Wardah ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:CentellaAsiatica,
+        beauty:HyaluronicAcid ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Hydrating Toner"^^xsd:string ;
+    beauty:sourceName "Wardah Official"^^xsd:string ;
+    beauty:sourceURL "https://www.wardahbeauty.com/id/product/skincare/nature-daily-hydramild-toner-essence"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:DrySkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration .
+
+beauty:P011 a beauty:Product ;
+    rdfs:label "Acne Care Facial Wash"^^xsd:string ;
+    beauty:belongsToBrand beauty:Wardah ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:Cleansing ;
+    beauty:hasIngredient beauty:SalicylicAcid,
+        beauty:TeaTree,
+        beauty:ZincPCA ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Acne Care Facial Wash"^^xsd:string ;
+    beauty:sourceName "Wardah Official"^^xsd:string ;
+    beauty:sourceURL "https://www.wardahbeauty.com/en/product/skincare/wardah-acnederm-pure-foaming-cleanser"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:LargePores .
+
+beauty:P012 a beauty:Product ;
+    rdfs:label "Moisturizing Sunscreen SPF40"^^xsd:string ;
+    beauty:belongsToBrand beauty:Wardah ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:VitaminE,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Moisturizing Sunscreen SPF40"^^xsd:string ;
+    beauty:sourceName "Wardah Official"^^xsd:string ;
+    beauty:sourceURL "https://www.wardahbeauty.com/en/product/skincare/uv-shield-aqua-fresh-sunscreen-serum-spf-50-pa"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes ;
+    beauty:targetsConcern beauty:SunDamage .
+
+beauty:P013 a beauty:Product ;
+    rdfs:label "Lightening Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Wardah ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:Niacinamide,
+        beauty:VitaminE ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Lightening Serum"^^xsd:string ;
+    beauty:sourceName "Wardah Official"^^xsd:string ;
+    beauty:sourceURL "https://www.wardahbeauty.com/en/product/skincare/ightening-serum-ampoule"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dullness,
+        beauty:Hyperpigmentation .
+
+beauty:P014 a beauty:Product ;
+    rdfs:label "Hydro Series Moisturizer"^^xsd:string ;
+    beauty:belongsToBrand beauty:Wardah ;
+    beauty:belongsToCategory beauty:Moisturizer ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:Glycerin,
+        beauty:HyaluronicAcid ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Hydro Series Moisturizer"^^xsd:string ;
+    beauty:sourceName "Wardah Official"^^xsd:string ;
+    beauty:sourceURL "https://www.wardahbeauty.com/id/product/skincare/wardah-hydra-rose-moisture-rich-night-gel"^^xsd:anyURI ;
+    beauty:suitableFor beauty:DrySkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration,
+        beauty:Dryness .
+
+beauty:P015 a beauty:Product ;
+    rdfs:label "Perfect Bright Toner"^^xsd:string ;
+    beauty:belongsToBrand beauty:Wardah ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Perfect Bright Toner"^^xsd:string ;
+    beauty:sourceName "Wardah Official"^^xsd:string ;
+    beauty:sourceURL "https://www.wardahbeauty.com/id/product/skincare/wardah-lightening-face-toner"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration,
+        beauty:Dullness .
+
+beauty:P016 a beauty:Product ;
+    rdfs:label "Brightly Ever After Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Scarlett ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:Niacinamide,
+        beauty:TranexamicAcid,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Brightly Ever After Serum"^^xsd:string ;
+    beauty:sourceName "Scarlett Official"^^xsd:string ;
+    beauty:sourceURL "https://scarlettofficial.id/product/scarlett-brightly-ever-after-serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:AcneMarks,
+        beauty:Dullness,
+        beauty:Hyperpigmentation .
+
+beauty:P017 a beauty:Product ;
+    rdfs:label "Acne Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Scarlett ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:PoreCare ;
+    beauty:hasIngredient beauty:Niacinamide,
+        beauty:SalicylicAcid,
+        beauty:TeaTree,
+        beauty:Zinc ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Acne Serum"^^xsd:string ;
+    beauty:sourceName "Scarlett Official"^^xsd:string ;
+    beauty:sourceURL "https://scarlettofficial.id/product/scarlett-acne-serum---niacinamide-5--serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:Inflammation,
+        beauty:LargePores .
+
+beauty:P018 a beauty:Product ;
+    rdfs:label "Facial Wash Brightening"^^xsd:string ;
+    beauty:belongsToBrand beauty:Scarlett ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Cleansing ;
+    beauty:hasIngredient beauty:Glycerin,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Facial Wash Brightening"^^xsd:string ;
+    beauty:sourceName "Scarlett Official"^^xsd:string ;
+    beauty:sourceURL "https://scarlettofficial.id/product/scarlett-brightening-facial-wash"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dullness .
+
+beauty:P019 a beauty:Product ;
+    rdfs:label "Moisturizer Brightening"^^xsd:string ;
+    beauty:belongsToBrand beauty:Scarlett ;
+    beauty:belongsToCategory beauty:Moisturizer ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Moisturizer Brightening"^^xsd:string ;
+    beauty:sourceName "Scarlett Official"^^xsd:string ;
+    beauty:sourceURL "https://scarlettofficial.id/product/scarlett-glow-bright-gel-moisturizer---brightening-facial-wash"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:DrySkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration,
+        beauty:Dullness .
+
+beauty:P020 a beauty:Product ;
+    rdfs:label "UV Shield Moisturizer SPF30"^^xsd:string ;
+    beauty:belongsToBrand beauty:Scarlett ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:VitaminC,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "UV Shield Moisturizer SPF30"^^xsd:string ;
+    beauty:sourceName "Scarlett Official"^^xsd:string ;
+    beauty:sourceURL "https://scarlettofficial.id/product/scarlett-ultra-light-daily-sunscreen-30ml"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dullness,
+        beauty:SunDamage .
+
+beauty:P021 a beauty:Product ;
+    rdfs:label "Acne Facial Wash"^^xsd:string ;
+    beauty:belongsToBrand beauty:Scarlett ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:Cleansing ;
+    beauty:hasIngredient beauty:Niacinamide,
+        beauty:SalicylicAcid,
+        beauty:TeaTree ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Acne Facial Wash"^^xsd:string ;
+    beauty:sourceName "Scarlett Official"^^xsd:string ;
+    beauty:sourceURL "https://scarlettofficial.id/product/scarlett-acne-series"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:LargePores .
+
+beauty:P022 a beauty:Product ;
+    rdfs:label "Retinol Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Scarlett ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:AntiAging,
+        beauty:Brightening ;
+    beauty:hasIngredient beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:Retinol ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Retinol Serum"^^xsd:string ;
+    beauty:sourceName "Scarlett Official"^^xsd:string ;
+    beauty:sourceURL "https://scarlettofficial.id/product/scarlett-skin-smoothing-retinol-serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:AcneMarks,
+        beauty:Aging,
+        beauty:FineLine .
+
+beauty:P023 a beauty:Product ;
+    rdfs:label "Acne Facial Wash"^^xsd:string ;
+    beauty:belongsToBrand beauty:Emina ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:Cleansing ;
+    beauty:hasIngredient beauty:SalicylicAcid,
+        beauty:TeaTree,
+        beauty:ZincPCA ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Acne Facial Wash"^^xsd:string ;
+    beauty:sourceName "Emina Official"^^xsd:string ;
+    beauty:sourceURL "https://www.eminacosmetics.com/ms-pimple-acne-solution--"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:LargePores .
+
+beauty:P024 a beauty:Product ;
+    rdfs:label "Bright Stuff Moisturizer"^^xsd:string ;
+    beauty:belongsToBrand beauty:Emina ;
+    beauty:belongsToCategory beauty:Moisturizer ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Bright Stuff Moisturizer"^^xsd:string ;
+    beauty:sourceName "Emina Official"^^xsd:string ;
+    beauty:sourceURL "https://www.eminacosmetics.com/-bright-stuff-moisturizing-cream"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration,
+        beauty:Dullness .
+
+beauty:P025 a beauty:Product ;
+    rdfs:label "Sun Protection Lotion SPF30"^^xsd:string ;
+    beauty:belongsToBrand beauty:Emina ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:VitaminE,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Sun Protection Lotion SPF30"^^xsd:string ;
+    beauty:sourceName "Female Daily Review"^^xsd:string ;
+    beauty:sourceURL "https://reviews.femaledaily.com/products/moisturizer/sun-protection-1/emina/sun-protection-spf-30-pa"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes ;
+    beauty:targetsConcern beauty:SunDamage .
+
+beauty:P026 a beauty:Product ;
+    rdfs:label "Moist and Glow Toner"^^xsd:string ;
+    beauty:belongsToBrand beauty:Emina ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:Glycerin,
+        beauty:HyaluronicAcid ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Moist and Glow Toner"^^xsd:string ;
+    beauty:sourceName "Emina Official"^^xsd:string ;
+    beauty:sourceURL "https://www.eminacosmetics.com/bright-stuff-face-toner-"^^xsd:anyURI ;
+    beauty:suitableFor beauty:DrySkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration .
+
+beauty:P027 a beauty:Product ;
+    rdfs:label "Acne Spot Gel"^^xsd:string ;
+    beauty:belongsToBrand beauty:Emina ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:Allantoin,
+        beauty:SalicylicAcid,
+        beauty:TeaTree ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Acne Spot Gel"^^xsd:string ;
+    beauty:sourceName "Emina Official"^^xsd:string ;
+    beauty:sourceURL "https://www.eminacosmetics.com/ms-pimple-acne-solution-spot-gel"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:Inflammation .
+
+beauty:P028 a beauty:Product ;
+    rdfs:label "Bright Stuff Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Emina ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Bright Stuff Serum"^^xsd:string ;
+    beauty:sourceName "Emina Official"^^xsd:string ;
+    beauty:sourceURL "https://www.eminacosmetics.com/bright-stuff-serum-30ml"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:AcneMarks,
+        beauty:Dullness .
+
+beauty:P029 a beauty:Product ;
+    rdfs:label "Niacinamide Toner"^^xsd:string ;
+    beauty:belongsToBrand beauty:Avoskin ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:PoreCare ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Niacinamide Toner"^^xsd:string ;
+    beauty:sourceName "Sociolla"^^xsd:string ;
+    beauty:sourceURL "https://www.sociolla.com/toner/52497-your-skin-bae-series-toner-niacinamide-7-alpha-arbutin-1-kale"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:OilySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Dullness,
+        beauty:LargePores .
+
+beauty:P030 a beauty:Product ;
+    rdfs:label "Your Skin Bae Serum Niacinamide"^^xsd:string ;
+    beauty:belongsToBrand beauty:Avoskin ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:TranexamicAcid ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Your Skin Bae Serum Niacinamide"^^xsd:string ;
+    beauty:sourceName "Avoskin Official"^^xsd:string ;
+    beauty:sourceURL "https://www.avoskinbeauty.com/product/serum-avoskin-your-skin-bae-niacinamide-30-ml-mencerahkan-kulit"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:AcneMarks,
+        beauty:Dullness,
+        beauty:Hyperpigmentation .
+
+beauty:P031 a beauty:Product ;
+    rdfs:label "TIAM Vita B3 Source"^^xsd:string ;
+    beauty:belongsToBrand beauty:Avoskin ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:Panthenol ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "TIAM Vita B3 Source"^^xsd:string ;
+    beauty:sourceName "TIAM Official"^^xsd:string ;
+    beauty:sourceURL "https://tiamglobal.com/products/tiam-vita-b3-source-40ml-1"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Dullness,
+        beauty:Redness .
+
+beauty:P032 a beauty:Product ;
+    rdfs:label "Miracle Toner"^^xsd:string ;
+    beauty:belongsToBrand beauty:Avoskin ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Exfoliating,
+        beauty:PoreCare ;
+    beauty:hasIngredient beauty:AHA,
+        beauty:BHA,
+        beauty:CentellaAsiatica,
+        beauty:Niacinamide ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Miracle Toner"^^xsd:string ;
+    beauty:sourceName "Avoskin Official"^^xsd:string ;
+    beauty:sourceURL "https://www.avoskinbeauty.com/product/toner-avoskin-miraculous-refining-100-ml-aha-bha-pha-eksfoliasi-kulit"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:LargePores,
+        beauty:UnevenSkinTone .
+
+beauty:P033 a beauty:Product ;
+    rdfs:label "Perfect Glow Sunscreen SPF50"^^xsd:string ;
+    beauty:belongsToBrand beauty:Avoskin ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Perfect Glow Sunscreen SPF50"^^xsd:string ;
+    beauty:sourceName "Avoskin Official"^^xsd:string ;
+    beauty:sourceURL "https://www.avoskinbeauty.com/product-review/sunscreen-avoskin-your-skin-bae-shield-of-sun-spf-50-pa-30-ml"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:SunDamage .
+
+beauty:P034 a beauty:Product ;
+    rdfs:label "Hydrating Facial Wash"^^xsd:string ;
+    beauty:belongsToBrand beauty:Avoskin ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:Cleansing,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:CentellaAsiatica,
+        beauty:Glycerin ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Hydrating Facial Wash"^^xsd:string ;
+    beauty:sourceName "Avoskin Official"^^xsd:string ;
+    beauty:sourceURL "https://www.avoskinbeauty.com/product-category/facial-cleanser"^^xsd:anyURI ;
+    beauty:suitableFor beauty:DrySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Dryness,
+        beauty:Irritation .
+
+beauty:P035 a beauty:Product ;
+    rdfs:label "Acne Serum BHA"^^xsd:string ;
+    beauty:belongsToBrand beauty:Avoskin ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:PoreCare ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:Niacinamide,
+        beauty:SalicylicAcid ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Acne Serum BHA"^^xsd:string ;
+    beauty:sourceName "Avoskin Official"^^xsd:string ;
+    beauty:sourceURL "https://www.avoskinbeauty.com/product/serum-avoskin-your-skin-bae-salicylic-acid-30-ml-untuk-kulit-komedo"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:LargePores .
+
+beauty:P036 a beauty:Product ;
+    rdfs:label "Hydra Bright Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:DearMeBeauty ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Hydra Bright Serum"^^xsd:string ;
+    beauty:sourceName "Dear Me Beauty Official"^^xsd:string ;
+    beauty:sourceURL "https://www.dearmebeauty.com/"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:AcneMarks,
+        beauty:Dehydration,
+        beauty:Dullness .
+
+beauty:P037 a beauty:Product ;
+    rdfs:label "Soothing Toner Centella"^^xsd:string ;
+    beauty:belongsToBrand beauty:DearMeBeauty ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Hydrating,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:Allantoin,
+        beauty:CentellaAsiatica,
+        beauty:Panthenol ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Soothing Toner Centella"^^xsd:string ;
+    beauty:sourceName "Nihonmart"^^xsd:string ;
+    beauty:sourceURL "https://nihonmart.id/dear-me-beauty-skin-barrier-toner-essence-100ml"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Irritation,
+        beauty:Redness .
+
+beauty:P038 a beauty:Product ;
+    rdfs:label "Matte Sunscreen SPF50"^^xsd:string ;
+    beauty:belongsToBrand beauty:DearMeBeauty ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:MattifyingEffect,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:Niacinamide,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Matte Sunscreen SPF50"^^xsd:string ;
+    beauty:sourceName "Dear Me Beauty Official"^^xsd:string ;
+    beauty:sourceURL "https://www.dearmebeauty.com/skincare/231-skin-barrier-sunscreen-gel.html"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:LargePores,
+        beauty:SunDamage .
+
+beauty:P039 a beauty:Product ;
+    rdfs:label "Retinol Night Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:DearMeBeauty ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:AntiAging,
+        beauty:Brightening ;
+    beauty:hasIngredient beauty:Niacinamide,
+        beauty:Peptide,
+        beauty:Retinol,
+        beauty:Squalane ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Retinol Night Serum"^^xsd:string ;
+    beauty:sourceName "SOCO Review"^^xsd:string ;
+    beauty:sourceURL "https://review.soco.id/product/face-serum/85773-retinol-blueberry-extract-face-serum"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Aging,
+        beauty:Dullness,
+        beauty:FineLine .
+
+beauty:P040 a beauty:Product ;
+    rdfs:label "Barrier Repair Moisturizer"^^xsd:string ;
+    beauty:belongsToBrand beauty:DearMeBeauty ;
+    beauty:belongsToCategory beauty:Moisturizer ;
+    beauty:hasBenefit beauty:BarrierRepair,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:Ceramide,
+        beauty:HyaluronicAcid,
+        beauty:Panthenol ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Barrier Repair Moisturizer"^^xsd:string ;
+    beauty:sourceName "Dear Me Beauty Official"^^xsd:string ;
+    beauty:sourceURL "https://www.dearmebeauty.com/skincare/241-dear-me-beauty-skin-barrier-water-cream-.html"^^xsd:anyURI ;
+    beauty:suitableFor beauty:DrySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Dryness,
+        beauty:Sensitivity .
+
+beauty:P041 a beauty:Product ;
+    rdfs:label "Acne Cleanser BHA"^^xsd:string ;
+    beauty:belongsToBrand beauty:DearMeBeauty ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:AcneTreatment,
+        beauty:Cleansing ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:SalicylicAcid,
+        beauty:TeaTree ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Acne Cleanser BHA"^^xsd:string ;
+    beauty:sourceName "Dear Me Beauty Official"^^xsd:string ;
+    beauty:sourceURL "https://www.dearmebeauty.com/7-skincare"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AcneProneSkin,
+        beauty:OilySkin ;
+    beauty:targetsConcern beauty:Acne,
+        beauty:LargePores .
+
+beauty:P042 a beauty:Product ;
+    rdfs:label "Brightening Toner"^^xsd:string ;
+    beauty:belongsToBrand beauty:Npure ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:CentellaAsiatica,
+        beauty:Niacinamide ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Brightening Toner"^^xsd:string ;
+    beauty:sourceName "NPURE Official"^^xsd:string ;
+    beauty:sourceURL "https://npureofficial.id/products/npure-licorice-milky-spotlight-toner"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:AcneMarks,
+        beauty:Dullness .
+
+beauty:P043 a beauty:Product ;
+    rdfs:label "Centella Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:Npure ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Repairing,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:Allantoin,
+        beauty:CentellaAsiatica,
+        beauty:Panthenol ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Centella Serum"^^xsd:string ;
+    beauty:sourceName "NPURE Official"^^xsd:string ;
+    beauty:sourceURL "https://npureofficial.id/products/new-npure-centella-asiatica-power-primer-serum-serum-for-acne-skin-serum-kulit-berjerawat"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:AcneMarks,
+        beauty:Irritation,
+        beauty:Redness .
+
+beauty:P044 a beauty:Product ;
+    rdfs:label "Sunscreen SPF50 PA++++"^^xsd:string ;
+    beauty:belongsToBrand beauty:Npure ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:Soothing,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:Niacinamide,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Sunscreen SPF50 PA++++"^^xsd:string ;
+    beauty:sourceName "NPURE Official"^^xsd:string ;
+    beauty:sourceURL "https://npureofficial.id/products/cica-beat-the-sun-spf-50-pa"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes ;
+    beauty:targetsConcern beauty:SunDamage .
+
+beauty:P045 a beauty:Product ;
+    rdfs:label "Hydrating Cleanser"^^xsd:string ;
+    beauty:belongsToBrand beauty:Npure ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:Cleansing,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:CentellaAsiatica,
+        beauty:HyaluronicAcid ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Hydrating Cleanser"^^xsd:string ;
+    beauty:sourceName "NPURE Official"^^xsd:string ;
+    beauty:sourceURL "https://npureofficial.id/collections/centella-asiatica-series"^^xsd:anyURI ;
+    beauty:suitableFor beauty:DrySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Dryness,
+        beauty:Sensitivity .
+
+beauty:P046 a beauty:Product ;
+    rdfs:label "Moisturizer Centella"^^xsd:string ;
+    beauty:belongsToBrand beauty:Npure ;
+    beauty:belongsToCategory beauty:Moisturizer ;
+    beauty:hasBenefit beauty:BarrierRepair,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:Ceramide,
+        beauty:HyaluronicAcid ;
+    beauty:hasPriceRange beauty:Budget ;
+    beauty:productName "Moisturizer Centella"^^xsd:string ;
+    beauty:sourceName "NPURE Official"^^xsd:string ;
+    beauty:sourceURL "https://npureofficial.id/products/npure-centella-asiatica-acne-clear-barrier-moisturizer"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:DrySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Dryness,
+        beauty:Sensitivity .
+
+beauty:P047 a beauty:Product ;
+    rdfs:label "Niacinamide Brightening Serum"^^xsd:string ;
+    beauty:belongsToBrand beauty:MineralBotanica ;
+    beauty:belongsToCategory beauty:Serum ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:EvenSkinTone ;
+    beauty:hasIngredient beauty:AlphaArbutin,
+        beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:VitaminC ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Niacinamide Brightening Serum"^^xsd:string ;
+    beauty:sourceName "Mineral Botanica Official"^^xsd:string ;
+    beauty:sourceURL "https://mineralbotanica.com/products/mineral-botanica-niacinamide-serum-with-artichoke-leaf-extract"^^xsd:anyURI ;
+    beauty:suitableFor beauty:CombinationSkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dullness,
+        beauty:Hyperpigmentation .
+
+beauty:P048 a beauty:Product ;
+    rdfs:label "UV Defense Sunscreen SPF50"^^xsd:string ;
+    beauty:belongsToBrand beauty:MineralBotanica ;
+    beauty:belongsToCategory beauty:Sunscreen ;
+    beauty:hasBenefit beauty:Soothing,
+        beauty:SunProtection ;
+    beauty:hasIngredient beauty:CentellaAsiatica,
+        beauty:TitaniumDioxide,
+        beauty:ZincOxide ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "UV Defense Sunscreen SPF50"^^xsd:string ;
+    beauty:sourceName "Mineral Botanica Official"^^xsd:string ;
+    beauty:sourceURL "https://mineralbotanica.com/products/mineral-botanica-sunny-shield-up-sunscreen-spf-50-pa"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:SunDamage .
+
+beauty:P049 a beauty:Product ;
+    rdfs:label "Hydra Glow Toner"^^xsd:string ;
+    beauty:belongsToBrand beauty:MineralBotanica ;
+    beauty:belongsToCategory beauty:Toner ;
+    beauty:hasBenefit beauty:Brightening,
+        beauty:Hydrating ;
+    beauty:hasIngredient beauty:HyaluronicAcid,
+        beauty:Niacinamide,
+        beauty:RoseExtract ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Hydra Glow Toner"^^xsd:string ;
+    beauty:sourceName "Mineral Botanica Official"^^xsd:string ;
+    beauty:sourceURL "https://mineralbotanica.com/products/glo-it-up-coq10-hydrating-facial-toner"^^xsd:anyURI ;
+    beauty:suitableFor beauty:DrySkin,
+        beauty:NormalSkin ;
+    beauty:targetsConcern beauty:Dehydration,
+        beauty:Dullness .
+
+beauty:P050 a beauty:Product ;
+    rdfs:label "Gentle Foam Cleanser"^^xsd:string ;
+    beauty:belongsToBrand beauty:MineralBotanica ;
+    beauty:belongsToCategory beauty:Cleanser ;
+    beauty:hasBenefit beauty:Cleansing,
+        beauty:Soothing ;
+    beauty:hasIngredient beauty:AloeVera,
+        beauty:CentellaAsiatica,
+        beauty:Glycerin ;
+    beauty:hasPriceRange beauty:Mid ;
+    beauty:productName "Gentle Foam Cleanser"^^xsd:string ;
+    beauty:sourceName "Mineral Botanica Official"^^xsd:string ;
+    beauty:sourceURL "https://mineralbotanica.com/products/perfect-purifying-facial-foam"^^xsd:anyURI ;
+    beauty:suitableFor beauty:AllSkinTypes,
+        beauty:DrySkin,
+        beauty:SensitiveSkin ;
+    beauty:targetsConcern beauty:Dryness,
+        beauty:Sensitivity .
+
+beauty:Plumping a beauty:Benefit ;
+    rdfs:label "Plumping" .
+
+beauty:Premium a beauty:PriceRange ;
+    rdfs:label "Premium" .
+
+beauty:belongsToBrand a owl:ObjectProperty ;
+    rdfs:label "belongsToBrand" ;
+    rdfs:comment "Menghubungkan produk ke mereknya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range beauty:Brand .
+
+beauty:belongsToCategory a owl:ObjectProperty ;
+    rdfs:label "belongsToCategory" ;
+    rdfs:comment "Menghubungkan produk ke kategorinya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range beauty:Category .
+
+beauty:brandName a owl:DatatypeProperty ;
+    rdfs:label "brandName" ;
+    rdfs:domain beauty:Brand ;
+    rdfs:range xsd:string .
+
+beauty:hasBenefit a owl:ObjectProperty ;
+    rdfs:label "hasBenefit" ;
+    rdfs:comment "Menghubungkan produk ke manfaat yang diberikan." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range beauty:Benefit .
+
+beauty:hasIngredient a owl:ObjectProperty ;
+    rdfs:label "hasIngredient" ;
+    rdfs:comment "Menghubungkan produk ke bahan aktif yang dikandungnya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range beauty:Ingredient .
+
+beauty:hasPriceRange a owl:ObjectProperty ;
+    rdfs:label "hasPriceRange" ;
+    rdfs:comment "Menghubungkan produk ke rentang harganya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range beauty:PriceRange .
+
+beauty:ingredientName a owl:DatatypeProperty ;
+    rdfs:label "ingredientName" ;
+    rdfs:domain beauty:Ingredient ;
+    rdfs:range xsd:string .
+
+beauty:productName a owl:DatatypeProperty ;
+    rdfs:label "productName" ;
+    rdfs:domain beauty:Product ;
+    rdfs:range xsd:string .
+
+beauty:sourceName a owl:DatatypeProperty ;
+    rdfs:label "sourceName" ;
+    rdfs:comment "Nama sumber referensi data produk." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range xsd:string .
+
+beauty:sourceURL a owl:DatatypeProperty ;
+    rdfs:label "sourceURL" ;
+    rdfs:comment "URL sumber referensi data produk." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range xsd:anyURI .
+
+beauty:suitableFor a owl:ObjectProperty ;
+    rdfs:label "suitableFor" ;
+    rdfs:comment "Menghubungkan produk ke jenis kulit yang cocok." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range beauty:SkinType .
+
+beauty:targetsConcern a owl:ObjectProperty ;
+    rdfs:label "targetsConcern" ;
+    rdfs:comment "Menghubungkan produk ke masalah kulit yang ditargetkan." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range beauty:SkinConcern .
+
+beauty:AHA a beauty:Ingredient ;
+    rdfs:label "AHA"^^xsd:string ;
+    beauty:ingredientName "AHA"^^xsd:string .
+
+beauty:BHA a beauty:Ingredient ;
+    rdfs:label "BHA"^^xsd:string ;
+    beauty:ingredientName "BHA"^^xsd:string .
+
+beauty:Exfoliating a beauty:Benefit ;
+    rdfs:label "Exfoliating",
+        "Exfoliating"^^xsd:string .
+
+beauty:Repairing a beauty:Benefit ;
+    rdfs:label "Repairing",
+        "Repairing"^^xsd:string .
+
+beauty:RoseExtract a beauty:Ingredient ;
+    rdfs:label "Rose Extract"^^xsd:string ;
+    beauty:ingredientName "Rose Extract"^^xsd:string .
+
+beauty:TitaniumDioxide a beauty:Ingredient ;
+    rdfs:label "Titanium Dioxide"^^xsd:string ;
+    beauty:ingredientName "Titanium Dioxide"^^xsd:string .
+
+beauty:Zinc a beauty:Ingredient ;
+    rdfs:label "Zinc"^^xsd:string ;
+    beauty:ingredientName "Zinc"^^xsd:string .
+
+beauty:BarrierRepair a beauty:Benefit ;
+    rdfs:label "Barrier Repair",
+        "Barrier Repair"^^xsd:string .
+
+beauty:MattifyingEffect a beauty:Benefit ;
+    rdfs:label "Mattifying Effect",
+        "Mattifying Effect"^^xsd:string .
+
+beauty:Peptide a beauty:Ingredient ;
+    rdfs:label "Peptide"^^xsd:string ;
+    beauty:ingredientName "Peptide"^^xsd:string .
+
+beauty:Squalane a beauty:Ingredient ;
+    rdfs:label "Squalane"^^xsd:string ;
+    beauty:ingredientName "Squalane"^^xsd:string .
+
+beauty:UnevenSkinTone a beauty:SkinConcern ;
+    rdfs:label "Uneven Skin Tone",
+        "Uneven Skin Tone"^^xsd:string .
+
+beauty:ZincPCA a beauty:Ingredient ;
+    rdfs:label "Zinc PCA"^^xsd:string ;
+    beauty:ingredientName "Zinc PCA"^^xsd:string .
+
+beauty:Aging a beauty:SkinConcern ;
+    rdfs:label "Aging",
+        "Aging"^^xsd:string .
+
+beauty:AntiAging a beauty:Benefit ;
+    rdfs:label "Anti Aging"^^xsd:string,
+        "Anti-Aging" .
+
+beauty:Ceramide a beauty:Ingredient ;
+    rdfs:label "Ceramide"^^xsd:string ;
+    beauty:ingredientName "Ceramide"^^xsd:string .
+
+beauty:FineLine a beauty:SkinConcern ;
+    rdfs:label "Fine Line"^^xsd:string,
+        "Fine Lines" .
+
+beauty:Inflammation a beauty:SkinConcern ;
+    rdfs:label "Inflammation",
+        "Inflammation"^^xsd:string .
+
+beauty:Retinol a beauty:Ingredient ;
+    rdfs:label "Retinol"^^xsd:string ;
+    beauty:ingredientName "Retinol"^^xsd:string .
+
+beauty:TranexamicAcid a beauty:Ingredient ;
+    rdfs:label "Tranexamic Acid"^^xsd:string ;
+    beauty:ingredientName "Tranexamic Acid"^^xsd:string .
+
+beauty:VitaminE a beauty:Ingredient ;
+    rdfs:label "Vitamin E"^^xsd:string ;
+    beauty:ingredientName "Vitamin E"^^xsd:string .
+
+beauty:Irritation a beauty:SkinConcern ;
+    rdfs:label "Irritation",
+        "Irritation"^^xsd:string .
+
+beauty:MineralBotanica a beauty:Brand ;
+    rdfs:label "Mineral Botanica"^^xsd:string ;
+    beauty:brandName "Mineral Botanica",
+        "Mineral Botanica"^^xsd:string .
+
+beauty:PriceRange a owl:Class ;
+    rdfs:label "PriceRange" ;
+    rdfs:comment "Rentang harga produk (Budget, Mid, Premium)." .
+
+beauty:Redness a beauty:SkinConcern ;
+    rdfs:label "Redness",
+        "Redness"^^xsd:string .
+
+beauty:Sensitivity a beauty:SkinConcern ;
+    rdfs:label "Sensitivity",
+        "Sensitivity"^^xsd:string .
+
+beauty:Allantoin a beauty:Ingredient ;
+    rdfs:label "Allantoin"^^xsd:string ;
+    beauty:ingredientName "Allantoin"^^xsd:string .
+
+beauty:Glycerin a beauty:Ingredient ;
+    rdfs:label "Glycerin"^^xsd:string ;
+    beauty:ingredientName "Glycerin"^^xsd:string .
+
+beauty:Npure a beauty:Brand ;
+    rdfs:label "Npure"^^xsd:string ;
+    beauty:brandName "Npure",
+        "Npure"^^xsd:string .
+
+beauty:Panthenol a beauty:Ingredient ;
+    rdfs:label "Panthenol"^^xsd:string ;
+    beauty:ingredientName "Panthenol"^^xsd:string .
+
+beauty:Category a owl:Class ;
+    rdfs:label "Category" ;
+    rdfs:comment "Kategori jenis produk skincare (misal: Serum, Toner)." .
+
+beauty:DearMeBeauty a beauty:Brand ;
+    rdfs:label "Dear Me Beauty"^^xsd:string ;
+    beauty:brandName "Dear Me Beauty",
+        "Dear Me Beauty"^^xsd:string .
+
+beauty:Dryness a beauty:SkinConcern ;
+    rdfs:label "Dryness",
+        "Dryness"^^xsd:string .
+
+beauty:Emina a beauty:Brand ;
+    rdfs:label "Emina"^^xsd:string ;
+    beauty:brandName "Emina",
+        "Emina"^^xsd:string .
+
+beauty:Hyperpigmentation a beauty:SkinConcern ;
+    rdfs:label "Hyperpigmentation",
+        "Hyperpigmentation"^^xsd:string .
+
+beauty:PoreCare a beauty:Benefit ;
+    rdfs:label "Pore Care",
+        "Pore Care"^^xsd:string .
+
+beauty:Avoskin a beauty:Brand ;
+    rdfs:label "Avoskin"^^xsd:string ;
+    beauty:brandName "Avoskin",
+        "Avoskin"^^xsd:string .
+
+beauty:Moisturizer a beauty:Category ;
+    rdfs:label "Moisturizer",
+        "Moisturizer"^^xsd:string .
+
+beauty:Scarlett a beauty:Brand ;
+    rdfs:label "Scarlett"^^xsd:string ;
+    beauty:brandName "Scarlett",
+        "Scarlett"^^xsd:string .
+
+beauty:TeaTree a beauty:Ingredient ;
+    rdfs:label "Tea Tree"^^xsd:string ;
+    beauty:ingredientName "Tea Tree"^^xsd:string .
+
+beauty:Wardah a beauty:Brand ;
+    rdfs:label "Wardah"^^xsd:string ;
+    beauty:brandName "Wardah",
+        "Wardah"^^xsd:string .
+
+beauty:AcneMarks a beauty:SkinConcern ;
+    rdfs:label "Acne Marks",
+        "Acne Marks"^^xsd:string .
+
+beauty:AcneProneSkin a beauty:SkinType ;
+    rdfs:label "Acne Prone Skin"^^xsd:string,
+        "Acne-Prone Skin" .
+
+beauty:AcneTreatment a beauty:Benefit ;
+    rdfs:label "Acne Treatment",
+        "Acne Treatment"^^xsd:string .
+
+beauty:Cleanser a beauty:Category ;
+    rdfs:label "Cleanser",
+        "Cleanser"^^xsd:string .
+
+beauty:Cleansing a beauty:Benefit ;
+    rdfs:label "Cleansing",
+        "Cleansing"^^xsd:string .
+
+beauty:EvenSkinTone a beauty:Benefit ;
+    rdfs:label "Even Skin Tone",
+        "Even Skin Tone"^^xsd:string .
+
+beauty:SalicylicAcid a beauty:Ingredient ;
+    rdfs:label "Salicylic Acid"^^xsd:string ;
+    beauty:ingredientName "Salicylic Acid"^^xsd:string .
+
+beauty:SkinType a owl:Class ;
+    rdfs:label "SkinType" ;
+    rdfs:comment "Jenis kulit yang cocok untuk suatu produk." .
+
+beauty:Somethinc a beauty:Brand ;
+    rdfs:label "Somethinc"^^xsd:string ;
+    beauty:brandName "Somethinc",
+        "Somethinc"^^xsd:string .
+
+beauty:SunDamage a beauty:SkinConcern ;
+    rdfs:label "Sun Damage",
+        "Sun Damage"^^xsd:string .
+
+beauty:SunProtection a beauty:Benefit ;
+    rdfs:label "Sun Protection",
+        "Sun Protection"^^xsd:string .
+
+beauty:Sunscreen a beauty:Category ;
+    rdfs:label "Sunscreen",
+        "Sunscreen"^^xsd:string .
+
+beauty:Toner a beauty:Category ;
+    rdfs:label "Toner",
+        "Toner"^^xsd:string .
+
+beauty:ZincOxide a beauty:Ingredient ;
+    rdfs:label "Zinc Oxide"^^xsd:string ;
+    beauty:ingredientName "Zinc Oxide"^^xsd:string .
+
+beauty:AloeVera a beauty:Ingredient ;
+    rdfs:label "Aloe Vera"^^xsd:string ;
+    beauty:ingredientName "Aloe Vera"^^xsd:string .
+
+beauty:Acne a beauty:SkinConcern ;
+    rdfs:label "Acne",
+        "Acne"^^xsd:string .
+
+beauty:AlphaArbutin a beauty:Ingredient ;
+    rdfs:label "Alpha Arbutin"^^xsd:string ;
+    beauty:ingredientName "Alpha Arbutin"^^xsd:string .
+
+beauty:Brand a owl:Class ;
+    rdfs:label "Brand" ;
+    rdfs:comment "Merek atau produsen produk skincare." .
+
+beauty:Dehydration a beauty:SkinConcern ;
+    rdfs:label "Dehydration",
+        "Dehydration"^^xsd:string .
+
+beauty:VitaminC a beauty:Ingredient ;
+    rdfs:label "Vitamin C"^^xsd:string ;
+    beauty:ingredientName "Vitamin C"^^xsd:string .
+
+beauty:DrySkin a beauty:SkinType ;
+    rdfs:label "Dry Skin",
+        "Dry Skin"^^xsd:string .
+
+beauty:LargePores a beauty:SkinConcern ;
+    rdfs:label "Large Pores",
+        "Large Pores"^^xsd:string .
+
+beauty:AllSkinTypes a beauty:SkinType ;
+    rdfs:label "All Skin Types",
+        "All Skin Types"^^xsd:string .
+
+beauty:SensitiveSkin a beauty:SkinType ;
+    rdfs:label "Sensitive Skin",
+        "Sensitive Skin"^^xsd:string .
+
+beauty:Soothing a beauty:Benefit ;
+    rdfs:label "Soothing",
+        "Soothing"^^xsd:string .
+
+beauty:OilySkin a beauty:SkinType ;
+    rdfs:label "Oily Skin",
+        "Oily Skin"^^xsd:string .
+
+beauty:Benefit a owl:Class ;
+    rdfs:label "Benefit" ;
+    rdfs:comment "Manfaat utama yang diberikan oleh produk." .
+
+beauty:SkinConcern a owl:Class ;
+    rdfs:label "SkinConcern" ;
+    rdfs:comment "Masalah kulit yang ditargetkan oleh produk." .
+
+beauty:Hydrating a beauty:Benefit ;
+    rdfs:label "Hydrating",
+        "Hydrating"^^xsd:string .
+
+beauty:Serum a beauty:Category ;
+    rdfs:label "Serum",
+        "Serum"^^xsd:string .
+
+beauty:Dullness a beauty:SkinConcern ;
+    rdfs:label "Dullness",
+        "Dullness"^^xsd:string .
+
+beauty:CentellaAsiatica a beauty:Ingredient ;
+    rdfs:label "Centella Asiatica"^^xsd:string ;
+    beauty:ingredientName "Centella Asiatica"^^xsd:string .
+
+beauty:HyaluronicAcid a beauty:Ingredient ;
+    rdfs:label "Hyaluronic Acid"^^xsd:string ;
+    beauty:ingredientName "Hyaluronic Acid"^^xsd:string .
+
+beauty:NormalSkin a beauty:SkinType ;
+    rdfs:label "Normal Skin",
+        "Normal Skin"^^xsd:string .
+
+beauty:Brightening a beauty:Benefit ;
+    rdfs:label "Brightening",
+        "Brightening"^^xsd:string .
+
+beauty:CombinationSkin a beauty:SkinType ;
+    rdfs:label "Combination Skin",
+        "Combination Skin"^^xsd:string .
+
+beauty:Mid a beauty:PriceRange ;
+    rdfs:label "Mid",
+        "Mid"^^xsd:string .
+
+beauty:Ingredient a owl:Class ;
+    rdfs:label "Ingredient" ;
+    rdfs:comment "Bahan aktif atau kandungan yang terdapat dalam produk." .
+
+beauty:Budget a beauty:PriceRange ;
+    rdfs:label "Budget",
+        "Budget"^^xsd:string .
+
+beauty:Niacinamide a beauty:Ingredient ;
+    rdfs:label "Niacinamide"^^xsd:string ;
+    beauty:ingredientName "Niacinamide"^^xsd:string .
+
+beauty:Product a owl:Class ;
+    rdfs:label "Product" ;
+    rdfs:comment "Produk skincare yang tersedia dalam sistem." .
+
