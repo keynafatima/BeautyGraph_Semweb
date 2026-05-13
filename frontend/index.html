@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeautyGraph | Semantic Skincare Search</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand-mark">
+          <div class="brand-logo">BG</div>
+          <div>
+            <p class="eyebrow">Semantic Web Project</p>
+            <h1>BeautyGraph</h1>
+          </div>
+        </div>
+
+        <div class="server-status" id="serverStatus">
+          <span class="status-dot status-pending"></span>
+          <span>Checking backend...</span>
+        </div>
+      </nav>
+
+      <section class="hero-content">
+        <div class="hero-copy">
+          <p class="badge">RDF • Ontology • SPARQL • Knowledge Graph</p>
+          <h2>Sistem Pencarian Semantik Produk Skincare</h2>
+          <p>
+            Cari produk berdasarkan relasi semantik seperti jenis kulit, concern,
+            ingredient, brand, kategori, benefit, dan price range.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span id="statProducts">-</span>
+            <p>Produk RDF</p>
+          </div>
+          <div class="stat-card">
+            <span id="statTriples">-</span>
+            <p>Total Triples</p>
+          </div>
+          <div class="stat-card">
+            <span id="statFilters">-</span>
+            <p>Filter Options</p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="tabs" aria-label="Main navigation">
+        <button class="tab-btn active" data-tab="searchTab">Semantic Search</button>
+        <button class="tab-btn" data-tab="sparqlTab">SPARQL Demo</button>
+        <button class="tab-btn" data-tab="aboutTab">About RDF</button>
+      </section>
+
+      <section id="searchTab" class="tab-panel active">
+        <div class="panel-grid">
+          <aside class="filter-card">
+            <div class="card-header">
+              <p class="eyebrow">Search Controls</p>
+              <h3>Filter Produk</h3>
+            </div>
+
+            <label>
+              Keyword
+              <input id="keywordInput" type="text" placeholder="Cari nama produk..." />
+            </label>
+
+            <label>
+              Skin Type
+              <select id="skinTypeSelect">
+                <option value="">Semua Skin Type</option>
+              </select>
+            </label>
+
+            <label>
+              Concern
+              <select id="concernSelect">
+                <option value="">Semua Concern</option>
+              </select>
+            </label>
+
+            <label>
+              Ingredient
+              <select id="ingredientSelect">
+                <option value="">Semua Ingredient</option>
+              </select>
+            </label>
+
+            <label>
+              Brand
+              <select id="brandSelect">
+                <option value="">Semua Brand</option>
+              </select>
+            </label>
+
+            <label>
+              Category
+              <select id="categorySelect">
+                <option value="">Semua Category</option>
+              </select>
+            </label>
+
+            <label>
+              Benefit
+              <select id="benefitSelect">
+                <option value="">Semua Benefit</option>
+              </select>
+            </label>
+
+            <label>
+              Price Range
+              <select id="priceRangeSelect">
+                <option value="">Semua Price Range</option>
+              </select>
+            </label>
+
+            <div class="button-row">
+              <button id="searchBtn" class="primary-btn">Cari Produk</button>
+              <button id="resetBtn" class="secondary-btn">Reset</button>
+            </div>
+
+            <p class="helper-text">
+              Filter ini akan memanggil endpoint <code>/products</code> yang dibangun
+              dari query SPARQL ke RDF dataset.
+            </p>
+          </aside>
+
+          <section class="results-area">
+            <div class="results-toolbar">
+              <div>
+                <p class="eyebrow">Search Result</p>
+                <h3 id="resultTitle">Produk ditemukan</h3>
+              </div>
+              <div class="result-count" id="resultCount">0 hasil</div>
+            </div>
+
+            <div id="activeFilters" class="active-filters"></div>
+
+            <div id="loadingState" class="state-card hidden">
+              <div class="loader"></div>
+              <p>Mengambil data dari SPARQL endpoint...</p>
+            </div>
+
+            <div id="errorState" class="state-card error hidden"></div>
+
+            <div id="productGrid" class="product-grid"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="sparqlTab" class="tab-panel">
+        <div class="sparql-layout">
+          <div class="sparql-editor-card">
+            <div class="card-header">
+              <p class="eyebrow">Manual Query</p>
+              <h3>SPARQL Demo</h3>
+              <p>
+                Jalankan query SPARQL langsung ke endpoint <code>POST /sparql</code>.
+              </p>
+            </div>
+
+            <div class="example-row">
+              <button class="chip-btn" data-example="allProducts">All Products</button>
+              <button class="chip-btn" data-example="niacinamide">Ingredient: Niacinamide</button>
+              <button class="chip-btn" data-example="oilyAcne">Oily Skin + Acne</button>
+              <button class="chip-btn" data-example="similar">Similar Product P001</button>
+            </div>
+
+            <textarea id="sparqlInput" spellcheck="false"></textarea>
+
+            <div class="button-row">
+              <button id="runSparqlBtn" class="primary-btn">Run SPARQL</button>
+              <button id="clearSparqlBtn" class="secondary-btn">Clear Result</button>
+            </div>
+          </div>
+
+          <div class="sparql-result-card">
+            <div class="results-toolbar">
+              <div>
+                <p class="eyebrow">SPARQL Output</p>
+                <h3>Result Table</h3>
+              </div>
+              <div class="result-count" id="sparqlCount">0 rows</div>
+            </div>
+
+            <div id="sparqlError" class="state-card error hidden"></div>
+            <div id="sparqlTableWrap" class="table-wrap"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="aboutTab" class="tab-panel">
+        <div class="about-grid">
+          <article class="about-card">
+            <p class="eyebrow">Ontology Model</p>
+            <h3>Relasi Utama BeautyGraph</h3>
+            <pre class="ontology-diagram">Brand  ← belongsToBrand — Product — belongsToCategory → Category
+                              |
+                              ├── hasIngredient → Ingredient
+                              ├── suitableFor → SkinType
+                              ├── targetsConcern → SkinConcern
+                              ├── hasBenefit → Benefit
+                              └── hasPriceRange → PriceRange</pre>
+          </article>
+
+          <article class="about-card">
+            <p class="eyebrow">Semantic Search</p>
+            <h3>Kenapa bukan database biasa?</h3>
+            <p>
+              BeautyGraph merepresentasikan data produk sebagai RDF triples.
+              Setiap produk tidak hanya menyimpan teks, tetapi juga memiliki relasi
+              eksplisit ke brand, kategori, ingredient, skin type, concern, benefit,
+              dan price range.
+            </p>
+            <p>
+              Dengan SPARQL, sistem dapat mencari produk berdasarkan hubungan antar
+              entitas, misalnya produk yang cocok untuk <b>Oily Skin</b>, menargetkan
+              <b>Acne</b>, dan memiliki ingredient <b>Niacinamide</b>.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <p class="eyebrow">Project Status</p>
+            <h3>Komponen Semantic Web</h3>
+            <ul class="check-list">
+              <li>RDF dataset: <b>beautygraph.ttl</b></li>
+              <li>Ontology: <b>beautygraph_ontology_clean.ttl</b></li>
+              <li>SPARQL endpoint: <b>Flask /sparql</b></li>
+              <li>Website pencarian: <b>Frontend vanilla JS</b></li>
+              <li>Optional KG view: <b>Product detail graph</b></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="detailModal">
+    <div class="modal">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close detail">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
