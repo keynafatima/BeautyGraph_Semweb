@@ -1,0 +1,209 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix beauty: <http://beautygraph.org/ontology#> .
+
+# ─────────────────────────────────────────
+# Ontology Declaration
+# ─────────────────────────────────────────
+
+beauty: a owl:Ontology ;
+    rdfs:label "BeautyGraph Ontology" ;
+    rdfs:comment "Ontologi untuk sistem pencarian produk skincare berbasis Semantic Web." .
+
+# ─────────────────────────────────────────
+# Classes
+# ─────────────────────────────────────────
+
+beauty:Product a owl:Class ;
+    rdfs:label "Product" ;
+    rdfs:comment "Produk skincare yang tersedia dalam sistem." .
+
+beauty:Brand a owl:Class ;
+    rdfs:label "Brand" ;
+    rdfs:comment "Merek atau produsen produk skincare." .
+
+beauty:Category a owl:Class ;
+    rdfs:label "Category" ;
+    rdfs:comment "Kategori jenis produk skincare (misal: Serum, Toner)." .
+
+beauty:Ingredient a owl:Class ;
+    rdfs:label "Ingredient" ;
+    rdfs:comment "Bahan aktif atau kandungan yang terdapat dalam produk." .
+
+beauty:SkinType a owl:Class ;
+    rdfs:label "SkinType" ;
+    rdfs:comment "Jenis kulit yang cocok untuk suatu produk." .
+
+beauty:SkinConcern a owl:Class ;
+    rdfs:label "SkinConcern" ;
+    rdfs:comment "Masalah kulit yang ditargetkan oleh produk." .
+
+beauty:Benefit a owl:Class ;
+    rdfs:label "Benefit" ;
+    rdfs:comment "Manfaat utama yang diberikan oleh produk." .
+
+beauty:PriceRange a owl:Class ;
+    rdfs:label "PriceRange" ;
+    rdfs:comment "Rentang harga produk (Budget, Mid, Premium)." .
+
+# ─────────────────────────────────────────
+# Object Properties
+# ─────────────────────────────────────────
+
+beauty:belongsToBrand a owl:ObjectProperty ;
+    rdfs:label "belongsToBrand" ;
+    rdfs:comment "Menghubungkan produk ke mereknya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  beauty:Brand .
+
+beauty:belongsToCategory a owl:ObjectProperty ;
+    rdfs:label "belongsToCategory" ;
+    rdfs:comment "Menghubungkan produk ke kategorinya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  beauty:Category .
+
+beauty:hasIngredient a owl:ObjectProperty ;
+    rdfs:label "hasIngredient" ;
+    rdfs:comment "Menghubungkan produk ke bahan aktif yang dikandungnya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  beauty:Ingredient .
+
+beauty:suitableFor a owl:ObjectProperty ;
+    rdfs:label "suitableFor" ;
+    rdfs:comment "Menghubungkan produk ke jenis kulit yang cocok." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  beauty:SkinType .
+
+beauty:targetsConcern a owl:ObjectProperty ;
+    rdfs:label "targetsConcern" ;
+    rdfs:comment "Menghubungkan produk ke masalah kulit yang ditargetkan." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  beauty:SkinConcern .
+
+beauty:hasBenefit a owl:ObjectProperty ;
+    rdfs:label "hasBenefit" ;
+    rdfs:comment "Menghubungkan produk ke manfaat yang diberikan." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  beauty:Benefit .
+
+beauty:hasPriceRange a owl:ObjectProperty ;
+    rdfs:label "hasPriceRange" ;
+    rdfs:comment "Menghubungkan produk ke rentang harganya." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  beauty:PriceRange .
+
+# ─────────────────────────────────────────
+# Datatype Properties
+# ─────────────────────────────────────────
+
+beauty:productName a owl:DatatypeProperty ;
+    rdfs:label "productName" ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  xsd:string .
+
+beauty:brandName a owl:DatatypeProperty ;
+    rdfs:label "brandName" ;
+    rdfs:domain beauty:Brand ;
+    rdfs:range  xsd:string .
+
+beauty:ingredientName a owl:DatatypeProperty ;
+    rdfs:label "ingredientName" ;
+    rdfs:domain beauty:Ingredient ;
+    rdfs:range  xsd:string .
+beauty:sourceName a owl:DatatypeProperty ;
+    rdfs:label "sourceName" ;
+    rdfs:comment "Nama sumber referensi data produk." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  xsd:string .
+
+beauty:sourceURL a owl:DatatypeProperty ;
+    rdfs:label "sourceURL" ;
+    rdfs:comment "URL sumber referensi data produk." ;
+    rdfs:domain beauty:Product ;
+    rdfs:range  xsd:anyURI .
+
+
+# ─────────────────────────────────────────
+# Instances — Brand
+# ─────────────────────────────────────────
+
+beauty:Somethinc       a beauty:Brand ; beauty:brandName "Somethinc" .
+beauty:Wardah          a beauty:Brand ; beauty:brandName "Wardah" .
+beauty:Scarlett        a beauty:Brand ; beauty:brandName "Scarlett" .
+beauty:Emina           a beauty:Brand ; beauty:brandName "Emina" .
+beauty:Avoskin         a beauty:Brand ; beauty:brandName "Avoskin" .
+beauty:DearMeBeauty    a beauty:Brand ; beauty:brandName "Dear Me Beauty" .
+beauty:Npure           a beauty:Brand ; beauty:brandName "Npure" .
+beauty:MineralBotanica a beauty:Brand ; beauty:brandName "Mineral Botanica" .
+
+# ─────────────────────────────────────────
+# Instances — Category
+# ─────────────────────────────────────────
+
+beauty:Serum      a beauty:Category ; rdfs:label "Serum" .
+beauty:Toner      a beauty:Category ; rdfs:label "Toner" .
+beauty:Moisturizer a beauty:Category ; rdfs:label "Moisturizer" .
+beauty:Cleanser   a beauty:Category ; rdfs:label "Cleanser" .
+beauty:Sunscreen  a beauty:Category ; rdfs:label "Sunscreen" .
+
+# ─────────────────────────────────────────
+# Instances — SkinType
+# ─────────────────────────────────────────
+
+beauty:OilySkin        a beauty:SkinType ; rdfs:label "Oily Skin" .
+beauty:DrySkin         a beauty:SkinType ; rdfs:label "Dry Skin" .
+beauty:NormalSkin      a beauty:SkinType ; rdfs:label "Normal Skin" .
+beauty:CombinationSkin a beauty:SkinType ; rdfs:label "Combination Skin" .
+beauty:SensitiveSkin   a beauty:SkinType ; rdfs:label "Sensitive Skin" .
+beauty:AcneProneSkin   a beauty:SkinType ; rdfs:label "Acne-Prone Skin" .
+beauty:AllSkinTypes    a beauty:SkinType ; rdfs:label "All Skin Types" .
+
+# ─────────────────────────────────────────
+# Instances — SkinConcern
+# ─────────────────────────────────────────
+
+beauty:Acne             a beauty:SkinConcern ; rdfs:label "Acne" .
+beauty:AcneMarks        a beauty:SkinConcern ; rdfs:label "Acne Marks" .
+beauty:LargePores       a beauty:SkinConcern ; rdfs:label "Large Pores" .
+beauty:Dullness         a beauty:SkinConcern ; rdfs:label "Dullness" .
+beauty:Hyperpigmentation a beauty:SkinConcern ; rdfs:label "Hyperpigmentation" .
+beauty:Dehydration      a beauty:SkinConcern ; rdfs:label "Dehydration" .
+beauty:Aging            a beauty:SkinConcern ; rdfs:label "Aging" .
+beauty:FineLine         a beauty:SkinConcern ; rdfs:label "Fine Lines" .
+beauty:UnevenSkinTone    a beauty:SkinConcern ; rdfs:label "Uneven Skin Tone" .
+beauty:Redness          a beauty:SkinConcern ; rdfs:label "Redness" .
+beauty:Irritation       a beauty:SkinConcern ; rdfs:label "Irritation" .
+beauty:Inflammation     a beauty:SkinConcern ; rdfs:label "Inflammation" .
+beauty:SunDamage        a beauty:SkinConcern ; rdfs:label "Sun Damage" .
+beauty:Dryness          a beauty:SkinConcern ; rdfs:label "Dryness" .
+beauty:Sensitivity      a beauty:SkinConcern ; rdfs:label "Sensitivity" .
+
+# ─────────────────────────────────────────
+# Instances — Benefit
+# ─────────────────────────────────────────
+
+beauty:Brightening    a beauty:Benefit ; rdfs:label "Brightening" .
+beauty:Hydrating      a beauty:Benefit ; rdfs:label "Hydrating" .
+beauty:AcneTreatment  a beauty:Benefit ; rdfs:label "Acne Treatment" .
+beauty:AntiAging      a beauty:Benefit ; rdfs:label "Anti-Aging" .
+beauty:Soothing       a beauty:Benefit ; rdfs:label "Soothing" .
+beauty:PoreCare       a beauty:Benefit ; rdfs:label "Pore Care" .
+beauty:EvenSkinTone   a beauty:Benefit ; rdfs:label "Even Skin Tone" .
+beauty:SunProtection  a beauty:Benefit ; rdfs:label "Sun Protection" .
+beauty:Exfoliating    a beauty:Benefit ; rdfs:label "Exfoliating" .
+beauty:Repairing      a beauty:Benefit ; rdfs:label "Repairing" .
+beauty:BarrierRepair  a beauty:Benefit ; rdfs:label "Barrier Repair" .
+beauty:MattifyingEffect a beauty:Benefit ; rdfs:label "Mattifying Effect" .
+beauty:Cleansing      a beauty:Benefit ; rdfs:label "Cleansing" .
+beauty:Plumping       a beauty:Benefit ; rdfs:label "Plumping" .
+
+# ─────────────────────────────────────────
+# Instances — PriceRange
+# ─────────────────────────────────────────
+
+beauty:Budget  a beauty:PriceRange ; rdfs:label "Budget" .
+beauty:Mid     a beauty:PriceRange ; rdfs:label "Mid" .
+beauty:Premium a beauty:PriceRange ; rdfs:label "Premium" .
+
