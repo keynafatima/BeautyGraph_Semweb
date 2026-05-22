@@ -94,24 +94,3 @@ beautygraph/
 │   └── script.js
 └── README.md
 ```
-
-## Status Fase 1
-
-Fase 1 berfokus pada persiapan dataset, pembersihan istilah, desain ontology, dokumentasi scope, dan struktur awal project.
-
-Perbaikan yang sudah dilakukan:
-
-- Mengganti typo `UnvenSkinTone` menjadi `UnevenSkinTone`.
-- Menghapus `DullSkin` dari `skin_type`.
-- Menambahkan kolom `source_name` dan `source_url` ke dataset.
-- Menambahkan datatype property `sourceName` dan `sourceURL` ke ontology.
-- Membuat dokumentasi `data_dictionary.md`, `project_scope.md`, dan `logbook.md`.
-
-## Next Step
-
-Fase berikutnya adalah **Fase 2: Bangun RDF Dataset**, yaitu membuat script `csv_to_rdf.py` untuk mengubah CSV menjadi RDF triples menggunakan Python RDFLib.
-
-
-## Update Source Produk
-
-Dataset terbaru yang sudah memiliki `source_name` dan `source_url` tersedia pada `beautygraph_50products_sourced.csv`. File audit tersedia pada `beautygraph_50products_source_audit.csv` dan menjelaskan apakah link merupakan exact match atau closest available source match.
