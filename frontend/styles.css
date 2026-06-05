@@ -143,7 +143,7 @@ a {
 }
 
 .hero-section {
-  padding: 24px 0 10px;
+  padding: 20px 0 8px;
 }
 
 .topbar,
@@ -267,12 +267,12 @@ a {
 }
 
 .hero-copy {
-  min-height: 460px;
+  min-height: 380px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: var(--radius-xl);
-  padding: clamp(28px, 5vw, 58px);
+  padding: clamp(22px, 4vw, 46px);
 }
 
 .eyebrow {
@@ -405,15 +405,15 @@ h2 {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-xl);
-  padding: 28px;
+  padding: 24px;
 }
 
 .hero-card::after {
   content: "";
   position: absolute;
-  inset: auto -40px -70px auto;
-  width: 230px;
-  height: 230px;
+  inset: auto -30px -60px auto;
+  width: 190px;
+  height: 190px;
   border-radius: 999px;
   background: rgba(255, 141, 183, 0.18);
 }
@@ -453,14 +453,14 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .stat-card {
-  min-height: 112px;
+  min-height: 100px;
   border: 1px solid var(--line);
   border-radius: 22px;
-  padding: 16px;
+  padding: 14px;
   background: var(--surface-strong);
 }
 
@@ -485,13 +485,13 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   border-radius: var(--radius-xl);
-  margin: 22px 0;
+  margin: 20px 0;
   padding: 14px;
 }
 
 .semantic-strip article {
   border-radius: 22px;
-  padding: 18px;
+  padding: 16px;
   background: var(--surface-strong);
 }
 
@@ -560,9 +560,9 @@ h2 {
 
 .explorer-layout {
   display: grid;
-  grid-template-columns: 330px minmax(0, 1fr);
-  gap: 20px;
-  align-items: start;
+  grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
 }
 
 .filter-card,
@@ -577,6 +577,8 @@ h2 {
   position: sticky;
   top: 18px;
   padding: 22px;
+  height: 100%;
+  align-self: stretch;
 }
 
 .section-heading.compact h2 {
@@ -640,7 +642,7 @@ select {
 }
 
 textarea {
-  min-height: 430px;
+  min-height: 360px;
   padding: 16px;
   resize: vertical;
   font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
@@ -670,8 +672,8 @@ textarea:focus,
 }
 
 .results-area {
-  min-height: 690px;
-  padding: 22px;
+  padding: 20px;
+  height: 100%;
 }
 
 .results-toolbar {
@@ -717,19 +719,63 @@ textarea:focus,
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 14px;
+  margin-top: 18px;
+  padding-top: 6px;
+}
+
+.pg-btn {
+  min-width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-strong);
+  color: var(--brand-3);
+  font-size: 18px;
+  font-weight: 900;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.pg-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.pg-btn:disabled,
+.pg-btn[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.pg-info {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: var(--soft);
+  color: var(--brand-3);
+  font-size: 13px;
+  font-weight: 900;
 }
 
 .product-card {
   position: relative;
-  min-height: 265px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 18px;
+  padding: 16px;
   background: var(--surface-strong);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
@@ -871,8 +917,8 @@ textarea:focus,
 
 .sparql-layout {
   display: grid;
-  grid-template-columns: minmax(360px, 0.95fr) minmax(430px, 1.05fr);
-  gap: 20px;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 1.1fr);
+  gap: 18px;
 }
 
 .sparql-editor-card,
@@ -1186,7 +1232,7 @@ pre {
   .sparql-result-card,
   .about-card,
   .detail-content {
-    padding: 18px;
+    padding: 16px;
   }
 
   .stats-grid,
@@ -1214,6 +1260,15 @@ pre {
 
   .product-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+
+  .results-area {
+    min-height: auto;
   }
 
   .ontology-map {

@@ -393,11 +393,18 @@ function renderSemanticSummary(filters, keyword, totalResults) {
   els.semanticSummary.innerHTML = `<strong>Semantic hint:</strong><span>${escapeHtml(message)}</span>`;
 }
 
-function renderProducts(rows) {
-  els.resultCount.textContent = `${rows.length} hasil`;
-  els.resultTitle.textContent = rows.length ? "Produk ditemukan" : "Tidak ada produk";
+const PAGE_SIZE = 9;
+let __allRows = [];
+let __currentPage = 1;
 
-  if (!rows.length) {
+function renderProducts(rows) {
+  allProductRows = Array.isArray(rows) ? rows : [];
+  currentPage = 1;
+
+  els.resultCount.textContent = `${allProductRows.length} hasil`;
+  els.resultTitle.textContent = allProductRows.length ? "Produk ditemukan" : "Tidak ada produk";
+
+  if (!allProductRows.length) {
     els.productGrid.innerHTML = `
       <div class="empty-state">
         <div>
@@ -406,13 +413,82 @@ function renderProducts(rows) {
         </div>
       </div>
     `;
+
+    renderPaginationControls(0);
     return;
   }
 
-  els.productGrid.innerHTML = rows.map(productCardHtml).join("");
+  renderPage();
+}
+
+function renderPage() {
+  const totalItems = allProductRows.length;
+  const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+
+  if (currentPage > totalPages) currentPage = totalPages;
+  if (currentPage < 1) currentPage = 1;
+
+  const startIndex = (currentPage - 1) * PAGE_SIZE;
+  const endIndex = startIndex + PAGE_SIZE;
+  const pageItems = allProductRows.slice(startIndex, endIndex);
+
+  els.productGrid.innerHTML = pageItems.map(productCardHtml).join("");
 
   document.querySelectorAll("[data-detail-id]").forEach((button) => {
     button.addEventListener("click", () => openProductDetail(button.dataset.detailId));
+  });
+
+  renderPaginationControls(totalPages);
+}
+
+function renderPaginationControls(totalPages) {
+  const paginationEl = document.getElementById("pagination");
+  if (!paginationEl) return;
+
+  if (totalPages <= 1) {
+    paginationEl.innerHTML = "";
+    return;
+  }
+
+  const prevDisabled = currentPage <= 1 ? "disabled" : "";
+  const nextDisabled = currentPage >= totalPages ? "disabled" : "";
+
+  paginationEl.innerHTML = `
+    <button id="pgPrev" class="pg-btn" ${prevDisabled} aria-label="Halaman sebelumnya">
+      ←
+    </button>
+
+    <div class="pg-info">
+      Halaman ${currentPage} dari ${totalPages}
+    </div>
+
+    <button id="pgNext" class="pg-btn" ${nextDisabled} aria-label="Halaman berikutnya">
+      →
+    </button>
+  `;
+
+  document.getElementById("pgPrev")?.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage -= 1;
+      renderPage();
+
+      document.querySelector(".results-area")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
+
+  document.getElementById("pgNext")?.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      currentPage += 1;
+      renderPage();
+
+      document.querySelector(".results-area")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   });
 }
 
